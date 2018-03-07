@@ -12,7 +12,7 @@ not alter your or Microsoft's rights relating to pre-updated software or
 services). IF YOU COMPLY WITH THESE LICENSE TERMS, YOU HAVE THE RIGHTS
 BELOW. BY USING THE SOFTWARE, YOU ACCEPT THESE TERMS.
 
-## **INSTALLATION AND USE RIGHTS.**
+1. **INSTALLATION AND USE RIGHTS.**
 
 a)  **General.** You may install and use any number of copies of the software.
 
