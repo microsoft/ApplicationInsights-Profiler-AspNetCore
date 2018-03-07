@@ -1,3 +1,5 @@
+# CAUTION
+This is a documentation/sample repository. The [LICENSE](LICENSE) convers the content in this repository but does **NOT** cover the use of the product of Microsoft.ApplicationInsights.Profiler.AspNetCore. Please reference [EULA-prerelease.md](EULA-prerelease.md) for any prerelase product and [EULA-GA.md](EULA-GA.md) for any non-prerelease product.
 
 # Contributing
 
