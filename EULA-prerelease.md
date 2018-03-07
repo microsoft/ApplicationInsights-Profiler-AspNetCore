@@ -21,7 +21,6 @@ b)  **Included Microsoft Applications.** The software may include other Microsof
 
 
 2.  **TIME-SENSITIVE SOFTWARE.**
-    ============================
 
     a.  Period. This agreement is effective on your acceptance and
         terminates on the earlier of (i) 30 days following first
@@ -36,18 +35,14 @@ b)  **Included Microsoft Applications.** The software may include other Microsof
         software when it stops running.
 
 3.  **PRE-RELEASE SOFTWARE.** The software is a pre-release version. It may not operate correctly. It may be different from the commercially released version.
-    ==========================================================================================================================================================
+
 
 4.  **FEEDBACK.** If you give feedback about the software to Microsoft, you give to Microsoft, without charge, the right to use, share and commercialize your feedback in any way and for any purpose. You will not give feedback that is subject to a license that requires Microsoft to license its software or documentation to third parties because Microsoft includes your feedback in them. These rights survive this agreement.
-    ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+
 
 5.  **DATA COLLECTION.** The software may collect information about you and your use of the software and send that to Microsoft. Microsoft may use this information to provide services and improve Microsoft's products and services. Your opt-out rights, if any, are described in the product documentation. Some features in the software may enable collection of data from users of your applications that access or use the software. If you use these features to enable data collection in your applications, you must comply with applicable law, including getting any required user consent, and maintain a prominent privacy policy that accurately informs users about how you use, collect, and share their data. You can learn more about Microsoft's data collection and use in the product documentation and the Microsoft Privacy Statement at <https://go.microsoft.com/fwlink/?LinkId=521839>. You agree to comply with all applicable provisions of the Microsoft Privacy Statement.
-    ======================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
 6.  **SCOPE OF LICENSE.** The software is licensed, not sold. Microsoft reserves all other rights. Unless applicable law gives you more rights despite this limitation, you will not (and have no right to):
-    ========================================================================================================================================================================================================
-
-<!-- -->
 
 a)  work around any technical limitations in the software that only allow you to use it in certain ways;
 
@@ -61,24 +56,19 @@ e)  share, publish, distribute, or lend the software, provide the software as a 
 
 
 7.  **EXPORT RESTRICTIONS.** You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end users, and end use. For further information on export restrictions, visit <http://aka.ms/exporting>.
-    =========================================================================================================================================================================================================================================================================================
+
 
 8.  **SUPPORT SERVICES.** Microsoft is not obligated under this agreement to provide any support services for the software. Any support provided is "as is", "with all faults", and without warranty of any kind.
-    =============================================================================================================================================================================================================
+
 
 9.  **UPDATES.** The software may periodically check for updates, and download and install them for you. You may obtain updates only from Microsoft or authorized sources. Microsoft may need to update your system to provide you with updates. You agree to receive these automatic updates without any additional notice. Updates may not include or support all existing software features, services, or peripheral devices.
-    ============================================================================================================================================================================================================================================================================================================================================================================================================================
+
 
 10. **ENTIRE AGREEMENT.** This agreement, and any other terms Microsoft may provide for supplements, updates, or third-party applications, is the entire agreement for the software.
-    ================================================================================================================================================================================
 
 11. **APPLICABLE LAW AND PLACE TO RESOLVE DISPUTES.** If you acquired the software in the United States or Canada, the laws of the state or province where you live (or, if a business, where your principal place of business is located) govern the interpretation of this agreement, claims for its breach, and all other claims (including consumer protection, unfair competition, and tort claims), regardless of conflict of laws principles. If you acquired the software in any other country, its laws apply. If U.S. federal jurisdiction exists, you and Microsoft consent to exclusive jurisdiction and venue in the federal court in King County, Washington for all disputes heard in court. If not, you and Microsoft consent to exclusive jurisdiction and venue in the Superior Court of King County, Washington for all disputes heard in court.
-    ===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
-
+   
 12. **CONSUMER RIGHTS; REGIONAL VARIATIONS.** This agreement describes certain legal rights. You may have other rights, including consumer rights, under the laws of your state, province, or country. Separate and apart from your relationship with Microsoft, you may also have rights with respect to the party from which you acquired the software. This agreement does not change those other rights if the laws of your state, province, or country do not permit it to do so. For example, if you acquired the software in one of the below regions, or mandatory country law applies, then the following provisions apply to you:
-    =======================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
-
-<!-- -->
 
 a)  **Australia.** You have statutory guarantees under the Australian Consumer Law and nothing in this agreement is intended to affect those rights.
 
@@ -97,14 +87,12 @@ c)  **Germany and Austria.**
 > case of death or personal or physical injury, Microsoft is liable
 > according to the statutory law.
 
-Subject to the foregoing clause ii., Microsoft will only be liable for slight negligence if Microsoft is in breach of such material contractual obligations, the fulfillment of which facilitate the due performance of this agreement, the breach of which would endanger the purpose of this agreement and the compliance with which a party may constantly trust in (so-called \"cardinal obligations\"). In other cases of slight negligence, Microsoft will not be liable for slight negligence.
-=====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+**Subject to the foregoing clause ii., Microsoft will only be liable for slight negligence if Microsoft is in breach of such material contractual obligations, the fulfillment of which facilitate the due performance of this agreement, the breach of which would endanger the purpose of this agreement and the compliance with which a party may constantly trust in (so-called \"cardinal obligations\"). In other cases of slight negligence, Microsoft will not be liable for slight negligence.**
 
 13. **DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED "AS IS." YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES, OR CONDITIONS. TO THE EXTENT PERMITTED UNDER APPLICABLE LAWS, MICROSOFT EXCLUDES ALL IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.**
-    ===========================================================================================================================================================================================================================================================================================================================================
 
 14. **LIMITATION ON AND EXCLUSION OF DAMAGES. IF YOU HAVE ANY BASIS FOR RECOVERING DAMAGES DESPITE THE PRECEDING DISCLAIMER OF WARRANTY, YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. \$5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.**
-    ====================================================================================================================================================================================================================================================================================================================================================
+
 
 > This limitation applies to (a) anything related to the software,
 > services, content (including code) on third party Internet sites, or
