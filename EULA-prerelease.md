@@ -16,7 +16,7 @@ BELOW. BY USING THE SOFTWARE, YOU ACCEPT THESE TERMS.
 ================================
 
 a)  **General.** You may install and use any number of copies of the software.
-    --------------------------------------------------------------------------
+
 
 b)  **Included Microsoft Applications.** The software may include other Microsoft applications. These license terms apply to those included applications, if any, unless other license terms are provided with the other Microsoft applications.
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
