@@ -3,7 +3,7 @@
 
 This is the project home page for App Services Linux profiler. Our NuGet package can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
 
-Installing the Profiler on your linux App Services web app can help you diagnose application performance issues. You will get traces similart to the screenshot below.
+Installing the Profiler on your linux App Services web app can help you diagnose application performance issues. You will get traces similar to the screenshot below.
 
 ![Profiler Traces](./media/profiler-traces.png)
 
