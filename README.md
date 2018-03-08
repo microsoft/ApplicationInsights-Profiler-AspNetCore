@@ -1,4 +1,3 @@
-:
 # Application Insights Profiler for Asp.Net core on Linux App Services
 
 This is the project home page for App Services Linux profiler. Our NuGet package can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
