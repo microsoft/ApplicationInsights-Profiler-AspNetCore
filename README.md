@@ -1,3 +1,10 @@
+# Application Insights Profiler for Asp.Net core on Linux App Services
+
+This is the project home page for App Services Linux profiler. Our NuGet package can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)
+
+Installing the Profiler on your linux App Services web app can help you diagnose application performance issues. You will get traces similart to the screenshot below.
+
+
 # CAUTION
 This is a documentation/sample repository. The [LICENSE](LICENSE) convers the content in this repository but does **NOT** cover the use of the product of Microsoft.ApplicationInsights.Profiler.AspNetCore. Please reference [EULA-prerelease.md](EULA-prerelease.md) for any prerelase product and [EULA-GA.md](EULA-GA.md) for any non-prerelease product.
 
