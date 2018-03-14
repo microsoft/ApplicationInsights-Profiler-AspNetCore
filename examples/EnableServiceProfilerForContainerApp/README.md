@@ -9,7 +9,7 @@ dotnet new mvc -n EnableServiceProfilerForContainerApp
 ```
 
 ## Create a Dockerfile for the application
-To enable Service Profiler, NuGet package needs to be installed and proper environment variables need to be set. One way to reach the goal is adding the following lines to your Dockerfile:
+To enable Service Profiler, NuGet package needs to be installed and proper environment variables need to be set. One way to reach the goal is adding the following lines to your [Dockerfile](./Dockerfile):
 
 ```dockerfile
 ...
@@ -25,7 +25,9 @@ ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES Microsoft.ApplicationInsights.Profiler.A
 * The second line sets the instrumentation key to Application Insights so that the application knows where to send the trace to.
 * The third line sets the entry point for Service Profiler.
 
-Reference the real [Dockerfile](./Dockerfile), you will notice it is a bit different. The major change is that **YOUR_APPLICATION_INSIGHTS_KEY** has been pulled out to become an argument - the main consideration is for the code security.
+*To make your build context as small as possible add a [.dockerignore](.dockerignore) file to your project folder.*
+
+Reference the full [Dockerfile](./Dockerfile), you will notice it is a bit different. The major change is that **YOUR_APPLICATION_INSIGHTS_KEY** has been pulled out to become an argument - the main consideration is for the code security.
 
 ## Create an Application Insights resource
 Follow the [Create an Application Insights resource](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource). Note down the [instrumentation key](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource#copy-the-instrumentation-key).
@@ -74,3 +76,15 @@ docker container logs myapp
 * Open the **Performance** blade in the application insights resource created. Once the the process of the trace is done, you will see the Profiler Traces button like it below:
 
 ![Profiler Traces](../../media/performance-blade.png)
+
+## Summary
+To recap a bit, there are 2 major steps to enable Service Profiler:
+
+* Add the reference to the NuGet package.
+* Set the environment variables to enable it.
+
+There are various ways to reach the same goal. The NuGet package could be installed in the project. The environment variable could be set by the orchestrator (like Kubernetes) as well.
+
+And when it comes to production deployment, there are also other aspects to be considered, like the security. For example, how to protect Application Insights Instrumentation key from being leaked and so on.
+
+All in all, we hope the Service Profiler will help improve the application performance! If you have any issues or suggestions, please report to [issues](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/issues).
