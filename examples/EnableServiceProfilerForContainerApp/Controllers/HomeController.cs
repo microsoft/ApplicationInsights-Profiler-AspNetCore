@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EnableServiceProfilerForContainerApp.Models;
+using System.Threading;
 
 namespace EnableServiceProfilerForContainerApp.Controllers
 {
@@ -18,7 +19,7 @@ namespace EnableServiceProfilerForContainerApp.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
+            Thread.Sleep(2000);
             return View();
         }
 
