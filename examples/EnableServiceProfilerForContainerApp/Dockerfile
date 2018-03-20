@@ -19,7 +19,7 @@ ARG APPINSIGHTS_KEY
 # Making sure the argument is set. Fail the build of the container otherwise.
 RUN test -n "$APPINSIGHTS_KEY"
 
-# Light up Application Insights for Kubernetes
+# Light up Application Insights and Service Profiler
 ENV APPINSIGHTS_INSTRUMENTATIONKEY $APPINSIGHTS_KEY
 ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES Microsoft.ApplicationInsights.Profiler.AspNetCore
 
