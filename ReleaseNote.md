@@ -12,7 +12,7 @@ Profiling the application and the services and monitoring the performance by usi
 If you follow the [App Insights Profiler for Windows](./app-insights-profiler.md) enablement workflow to click **Enable** in the Configure Profiler pane, you will receive an error as the button will try to install the Windows version of profiler agent on Linux environment.
 We are working on resolving this issue in the enablement experience.
 
-![You don't need to enable the Profiler again in performance pane to make profiler work on Linux App Services](./media/issue-enable-profiler.png)
+![You don't need to enable the Profiler again in performance pane to make profiler work on Linux App Services](ApplicationInsights-Profiler-AspNetCore/media/issue-enable-profiler.PNG)
 
 
 **[Feedbacks are welcome!](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/issues)**
