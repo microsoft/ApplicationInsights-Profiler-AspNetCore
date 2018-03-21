@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  enablespinvs:
+    environment:
+      - ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.ApplicationInsights.Profiler.AspNetCore
+    image: enablespinvs
+    build:
+      context: .
+      dockerfile: EnableSPInVS/Dockerfile
