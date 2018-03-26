@@ -8,6 +8,12 @@ This example is a barebone project created by calling the following cli command:
 dotnet new mvc -n EnableServiceProfilerForContainerApp
 ```
 
+## Refresh ASP.NET Core build/runtime images by pulling the latest
+```
+# docker pull microsoft/aspnetcore-build:2.0
+# docker pull microsoft/aspnetcore:2.0
+```
+
 ## Create a Dockerfile for the application
 To enable Service Profiler, NuGet package needs to be installed and proper environment variables need to be set. One way to reach the goal is adding the following lines to your [Dockerfile](./Dockerfile):
 
