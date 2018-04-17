@@ -1,3 +1,5 @@
+**Notice:** Ever since we released beta1, with your feedbacks, we have found some fundemental issues in reliablility. Some of them needs our code change, some requires .NET Core CLR change. While we are making those changes and getting them out of the door, we suggest you use beta1 only for evaluation purpose.
+
 # Application Insights Profiler for Asp.Net core on Linux App Services
 
 This is the project home page for App Services Linux profiler. Our NuGet package can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
