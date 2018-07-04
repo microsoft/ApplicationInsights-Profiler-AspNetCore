@@ -79,7 +79,7 @@ docker container logs myapp
 
 ## View the Service Profiler traces
 * Wait for 2-5 minutes so the events can be aggregated to Application Insights.
-* Open the **Performance** blade in the application insights resource created. Once the the process of the trace is done, you will see the Profiler Traces button like it below:
+* Open the **Performance** blade in the application insights resource created. Once the process of the trace is done, you will see the Profiler Traces button like it below:
 
 ![Profiler Traces](../../media/performance-blade.png)
 
