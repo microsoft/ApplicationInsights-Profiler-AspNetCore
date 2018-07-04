@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/examples/EnableServiceProfilerInVSCLR21/CLR21Example/CLR21Example/CLR21Example.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
