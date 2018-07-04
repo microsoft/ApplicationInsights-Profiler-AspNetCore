@@ -13,7 +13,7 @@ This is the project home page for App Services Linux profiler. Our NuGet package
 * [5 minutes walkthrough](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-aspnetcore-linux)
 
 ## Learn more
- * [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/blob/master/examples/EnableServiceProfilerForContainerApp/README.md).
+ * [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/blob/master/examples/EnableServiceProfilerCLR2_1/README.md).
 
 For Visual Studio user, please reference the following walk-through:
  * [Enable Service Profiler for ASP.NET Core application in Visual Studio](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerInVS).
