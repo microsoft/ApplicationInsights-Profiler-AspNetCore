@@ -1,26 +1,32 @@
 # Enable Service Profiler for containerized ASP.NET Core application
 Enable Service Profiler for ASP.NET Core application running in Linux Container is very easy and almost code free.
 
-This example assumes you already have an ASP.NET Core Application. If you are new to ASP.NET, follow the Get Started for [.NET Core SDK 2.1.4](https://www.microsoft.com/net/download/windows/build) or just clone and use this project.
+This example assumes you already have an ASP.NET Core Application. If you are new to ASP.NET, follow the Get Started for [.NET Core 2.1 SDK](https://dot.net) or just clone and use this project.
 
 This example is a barebone project created by calling the following cli command:
 ```
-dotnet new mvc -n EnableServiceProfilerForContainerApp
+dotnet new mvc -n AppInsightsProfilerExample
 ```
 
-## Refresh ASP.NET Core build/runtime images by pulling the latest
+## Reference Application Insights SDK
+Due to a recent CLR image change, adding a reference to Application Insights SDK manually is required. We are looking into removing this step later.
+For now, adding the package by:
 ```
-# docker pull microsoft/aspnetcore-build:2.0
-# docker pull microsoft/aspnetcore:2.0
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+```
+Once executed, you will see the following package being added to [AppInsightsProfilerExample.csproj](AppInsightsProfilerExample.csproj):
+```xml
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.3.0" />
+  </ItemGroup>
 ```
 
 ## Create a Dockerfile for the application
 To enable Service Profiler, NuGet package needs to be installed and proper environment variables need to be set. One way to reach the goal is adding the following lines to your [Dockerfile](./Dockerfile):
-
-```dockerfile
+```docker
 ...
 # Adding a reference to hosting startup package
-RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.0.0-beta1
+RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.2-beta1
 ...
 # Light up Application Insights for Kubernetes
 ENV APPINSIGHTS_INSTRUMENTATIONKEY YOUR_APPLICATION_INSIGHTS_KEY
@@ -29,7 +35,7 @@ ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES Microsoft.ApplicationInsights.Profiler.A
 ```
 * The first line adds the reference to the NuGet package of Service Profiler before the build of the project happens.
 * The second line sets the instrumentation key to Application Insights so that the application knows where to send the trace to.
-* The third line sets the entry point for Service Profiler.
+* The third line sets the bootstrapper for Service Profiler.
 
 *To make your build context as small as possible add a [.dockerignore](.dockerignore) file to your project folder.*
 
@@ -50,8 +56,8 @@ Just like in [appsettings.json](./appsettings.json).
 
 ## Build and run the Docker image
 ```bash
-$ docker build -t enable-sp-example --build-arg APPINSIGHTS_KEY=YOUR_APPLICATION_INSIGHTS_KEY .
-$ docker run -p 8080:80 --name enable-sp enable-sp-example
+$ docker build -t appinsights-profiler-example --build-arg APPINSIGHTS_KEY=YOUR_APPLICATION_INSIGHTS_KEY .
+$ docker run -p 8080:80 --name appinsights-profiler-example appinsights-profiler-example
 ```
 Note, replace **YOUR_APPLICATION_INSIGHTS_KEY** with the real instrumentation key from the previous step.
 
