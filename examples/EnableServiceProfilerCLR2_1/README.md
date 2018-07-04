@@ -28,3 +28,24 @@ ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES Microsoft.ApplicationInsights.Profiler.A
 
 Reference the full [Dockerfile](./Dockerfile), you will notice it is a bit different. The major change is that **YOUR_APPLICATION_INSIGHTS_KEY** has been pulled out to become an argument - the main consideration is for the code security.
 
+## Create an Application Insights resource
+Follow the [Create an Application Insights resource](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource). Note down the [instrumentation key](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource#copy-the-instrumentation-key).
+
+## Optionally set the log level to Information for Service Profiler
+To see a simple log, you can add the following settings to appsettings.json to reveal some Service Profiler logs:
+```json
+    "LogLevel": {
+      "Default": "Warning",
+      "ServiceProfiler":"Information"
+    }
+```
+Just like in [appsettings.json](./appsettings.json).
+
+## Build and run the Docker image
+```bash
+$ docker build -t appinsights-profiler-example --build-arg APPINSIGHTS_KEY=YOUR_APPLICATION_INSIGHTS_KEY .
+$ docker run -p 8080:80 --name appinsights-profiler-example appinsights-profiler-example
+```
+Note, replace **YOUR_APPLICATION_INSIGHTS_KEY** with the real instrumentation key from the previous step.
+
+Once the container starts to run, the Service Profiler will kick in for 2 minutes.
