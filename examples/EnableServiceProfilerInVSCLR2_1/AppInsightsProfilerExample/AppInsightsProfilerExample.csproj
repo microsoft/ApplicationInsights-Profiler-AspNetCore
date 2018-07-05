@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <ApplicationInsightsResourceId>/subscriptions/e8ea4e2c-5bc5-46a9-ac97-3dc3462bab38/resourcegroups/saars_aiprofiler_clr21_vs/providers/microsoft.insights/components/saars_aiprofiler_clr21_vs</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/e8ea4e2c-5bc5-46a9-ac97-3dc3462bab38/resourcegroups/saars_aiprofiler_clr21_vs/providers/microsoft.insights/components/saars_aiprofiler_clr21_vs</ApplicationInsightsAnnotationResourceId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="1.1.2-beta1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>
