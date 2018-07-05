@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  appinsightsprofilerexample:
+    image: ${DOCKER_REGISTRY}appinsightsprofilerexample
+    build:
+      context: .
+      dockerfile: AppInsightsProfilerExample/Dockerfile
