@@ -3,6 +3,8 @@ version: '3.4'
 services:
   appinsightsprofilerexample:
     image: ${DOCKER_REGISTRY}appinsightsprofilerexample
+    environment:
+      "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.ApplicationInsights.Profiler.AspNetCore"
     build:
       context: .
       dockerfile: AppInsightsProfilerExample/Dockerfile
