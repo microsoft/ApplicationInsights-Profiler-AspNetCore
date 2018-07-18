@@ -1,4 +1,4 @@
-**Notice:** Ever since we released beta1, with your feedbacks, we have found some fundemental issues in reliablility. Some of them needs our code change, some requires .NET Core CLR change. While we are making those changes and getting them out of the door, we suggest you use beta1 only for evaluation purpose.
+**Notice:** It is highly recommended to use Application Insights for Profiler with [CLR 2.1](https://dot.net) (shipped with Dotnet Core SDK 2.1.300 and above) since there are fixes for fundamental reliability issues.
 
 # Application Insights Profiler for Asp.Net core on Linux App Services
 
