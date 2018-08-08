@@ -9,6 +9,8 @@ dotnet new mvc -n AppInsightsProfilerExample
 ```
 
 ## Reference Application Insights SDK
+_Note:_ You can skip this step if you are using 1.1.3-beta1 or above.
+
 Due to a recent CLR image change, adding a reference to Application Insights SDK manually is required. We are looking into removing this step later.
 For now, adding the package by:
 ```
