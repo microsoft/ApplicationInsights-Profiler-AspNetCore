@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . ./
 
 # Adding a reference to hosting startup package
-RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.2-beta1
+RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.3-beta1
 
 # Restore & publish the app
 RUN dotnet publish -c Release -o out
