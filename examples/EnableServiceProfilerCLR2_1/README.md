@@ -28,7 +28,7 @@ To enable Service Profiler, NuGet package needs to be installed and proper envir
 ```docker
 ...
 # Adding a reference to hosting startup package
-RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.3-beta1
+RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.3-*
 ...
 # Light up Application Insights for Kubernetes
 ENV APPINSIGHTS_INSTRUMENTATIONKEY YOUR_APPLICATION_INSIGHTS_KEY
