@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
-    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="1.1.3-*" />
+    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="1.1.4-*" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
