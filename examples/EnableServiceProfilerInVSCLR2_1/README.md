@@ -1,7 +1,9 @@
 # Enable Service Profiler for ASP.NET Core application in Visual Studio
+
 Enable Service Profiler for ASP.NET Core application in Visual Studio is easy. We will walk through the basic steps.
 
 ## Create the ASP.NET Core Web Application with Docker Support
+
 Let's start by creating an ASP.NET Core Web Application, we will name it `EnableSPInVS`. You can choose to start with an existing project as well.
 
 During the creation of the project, we will enable the docker support like this:
@@ -11,6 +13,7 @@ During the creation of the project, we will enable the docker support like this:
 The same goal could be reached by adding docker support to an existing project like it here: [Visual Studio Tools for Docker with ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker).
 
 ## Enable Application Insights
+
 Add support for application insights by using the context menu: `Add` | `Application Insights Telemetry...` and then follow the wizard:
 
 ![AddApplicationInsights](./.media/AddApplicationInsights.png)
@@ -22,30 +25,29 @@ At the end of the wizard, it is expected to see Application Insights being fully
 ![Application Insights Fully Configured](./.media/ApplicationInsightsConfigured.png)
 
 ## Add a reference to ServiceProfiler
+
 Right-click on the project in Solution Explorer, choose `Manage NuGet Packages...` and the reference to the NuGet Package of `Microsoft.ApplicationInsights.Profiler.AspNetCore`.
 
 ![Add NuGet package of Service Profiler](./.media/AddNuGetPackageOfServiceProfiler.png)
 
-Then, we need to add the environment variable of `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES` to the `docker-compose.yaml` like this:
-```yaml
-version: '3.4'
+Then, turn on Service Profiler in `Startup.cs`:
 
-services:
-  appinsightsprofilerexample:
-    image: ${DOCKER_REGISTRY}appinsightsprofilerexample
-    environment:
-      "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.ApplicationInsights.Profiler.AspNetCore"
-    build:
-      context: .
-      dockerfile: AppInsightsProfilerExample/Dockerfile
+```csharp
+        public void ConfigureServices(IServiceCollection services)
+        {
+            // This statement adds Profiler to the application.
+            services.AddServiceProfiler();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        }
 ```
+
 Save and build the project. F5 for a Debug. In the output window, it is expected to see the Service Profiler logs in the Debug level:
 
 ![Service Profiler logs in VS Output Window](./.media/ServiceProfilerLogInVSOutput.png)
 
 Keep the application running for 2 minutes, access the website to generate some traffic. At the end of the session, you will see the logs like it below:
 
-```log
+```bash
 Service Profiler session finished. Samples: 14
 ServiceProfiler.EventPipe.Client.Schedules.TraceSchedule:Information: Service Profiler session finished. Samples: 14
 ```
@@ -55,8 +57,10 @@ Give it a few minutes for the trace to arrive the Cloud, and then the trace will
 ![Performance Blade with Service Profiler Traces](./.media/performance-blade.png)
 
 ## Publish to App Service
+
 Before publishing, optionally, it will be helpful if we set the minimum logging level to Information for Service Profiler in appsettings.json:
-```json
+
+```jsonc
 {
   "Logging": {
     "IncludeScopes": false,
@@ -69,6 +73,7 @@ Before publishing, optionally, it will be helpful if we set the minimum logging 
   // Other settings ...
 }
 ```
+
 Now we are going to publish the project to Azure App Service. Right-click on the project and choose `Publish`, and select `App Service Linux` like it below:
 
 ![Publish Target of App Service Linux](./.media/PublishTarget.png)
@@ -79,10 +84,10 @@ Follow the wizard to configure the App Service:
 
 ## Add Settings for the App Service in the Azure Portal
 
-```
-ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.ApplicationInsights.Profiler.AspNetCore
+```bash
 APPINSIGHTS_INSTRUMENTATIONKEY=0f1b2415-9a4f-4da1-9d26-replacewithyourown
 ```
+
 It will looks like this:
 
 ![Set Environment Variables](./.media/SetEnvInPortal.png)
