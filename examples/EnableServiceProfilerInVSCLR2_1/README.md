@@ -47,7 +47,7 @@ Save and build the project. F5 for a Debug. In the output window, it is expected
 
 Keep the application running for 2 minutes, access the website to generate some traffic. At the end of the session, you will see the logs like it below:
 
-```bash
+```shell
 Service Profiler session finished. Samples: 14
 ServiceProfiler.EventPipe.Client.Schedules.TraceSchedule:Information: Service Profiler session finished. Samples: 14
 ```
@@ -84,7 +84,7 @@ Follow the wizard to configure the App Service:
 
 ## Add Settings for the App Service in the Azure Portal
 
-```bash
+```shell
 APPINSIGHTS_INSTRUMENTATIONKEY=0f1b2415-9a4f-4da1-9d26-replacewithyourown
 ```
 
