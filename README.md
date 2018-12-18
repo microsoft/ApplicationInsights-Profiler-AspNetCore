@@ -16,7 +16,7 @@ This is the project home page for App Services Linux profiler. Our NuGet package
  * [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/blob/master/examples/EnableServiceProfilerCLR2_1/README.md).
 
 For Visual Studio user, please reference the following walk-through:
- * [Enable Service Profiler for ASP.NET Core application in Visual Studio](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerInVS).
+ * [Enable Service Profiler for ASP.NET Core application in Visual Studio](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerInVSCLR2_1).
  
 # CAUTION
 This is a documentation/sample repository. The [LICENSE](LICENSE) convers the content in this repository but does **NOT** cover the use of the product of Microsoft.ApplicationInsights.Profiler.AspNetCore. Please reference [EULA-prerelease.md](EULA-prerelease.md) for any prerelase product and [EULA-GA.md](EULA-GA.md) for any non-prerelease product.
