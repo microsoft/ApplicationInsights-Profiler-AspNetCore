@@ -18,7 +18,7 @@ For websites, like ASP.NET Core MVC applications, ASP.NET Core WebAPI and so on,
 
 Requests could be issued to the service manually in a browser or use curl like it below:
 
-```bash
+```shell
 curl https://localhost:5001/api/values
 ```
 
@@ -26,7 +26,7 @@ There are also automation options like [Azure Monitor availability tests](https:
 
 If you are running the service locally with debug logs, you will see logs like it below when a request is captured by the profiler:
 
-```bash
+```shell
 dbug: ServiceProfiler.EventPipe.Client.EventListeners.TraceSessionListener[0]
       Sample is added. {"ActivityIdPath":"/#4550/1/1/1/","StartTimeUtc":"2018-12-14T21:25:31.1368237+00:00","StopTimeUtc":"2018-12-14T21:25:32.2831271+00:00","RequestId":"|3d89f447-4cc29728c6a81ec4.","RoleInstance":"Computer","OperationName":"GET Values/Get","OperationId":"3d89f447-4cc29728c6a81ec4"}
 ```
