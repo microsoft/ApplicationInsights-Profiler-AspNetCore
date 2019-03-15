@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
-    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="1.1.4-private-201812171811" />
+    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="1.1.5-private-201812171811" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>

@@ -9,16 +9,21 @@ This is the project home page for App Services Linux profiler. Our NuGet package
 ## Get Started
 
 * Create a WebApi project
-    ```csharp
+
+    ```shell
     dotnet new webapi -n ProfilerEnabledWebAPI
     ```
+
 * Add the NuGet package
-    ```csharp
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.4-*
+
+    ```shell
+    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.5-*
     ```
+
     _Note: Find the latest package from the [NuGet.org here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)._
 
 * [Create an Application Insights in Azure Portal](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-dotnetcore-quick-start?toc=/azure/azure-monitor/toc.json#log-in-to-the-azure-portal), set Application Insights instrumentation key in `appsettings.json`:
+
     ```json
     {
         "ApplicationInsights": {
@@ -28,6 +33,7 @@ This is the project home page for App Services Linux profiler. Our NuGet package
     ```
 
 * Enable Application Insights in `Program.cs`:
+
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
         WebHost.CreateDefaultBuilder(args)
@@ -36,6 +42,7 @@ This is the project home page for App Services Linux profiler. Our NuGet package
     ```
 
 * Enable Profiler in `Startup.cs`:
+
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
@@ -45,11 +52,14 @@ This is the project home page for App Services Linux profiler. Our NuGet package
     ```
 
 * Run the code:
-    ```bash
+
+    ```shell
     dotnet run
     ```
+
     And you will see the following logs, indicating Profiler is up and running:
-    ```bash
+
+    ```shell
     dbug: ServiceProfiler.EventPipe.AspNetCore.ServiceProfilerStartupFilter[0]
         Constructing ServiceProfilerStartupFilter
     dbug: ServiceProfiler.EventPipe.AspNetCore.ServiceProfilerStartupFilter[0]
@@ -72,7 +82,14 @@ This is the project home page for App Services Linux profiler. Our NuGet package
     Application started. Press Ctrl+C to shut down.
     ...
     ```
+
 You have been start to run the the WebApi with Profiler on.
+
+* Generate some traffic for traces by visiting during the 2 minutes profiling session:
+
+    ```url
+    https://localhost:5001/api/values
+    ```
 
 ## Learn More
 
@@ -84,12 +101,12 @@ You have been start to run the the WebApi with Profiler on.
 
 | Application Insights Profiler | Windows                                                                                        | Linux                            |
 |-------------------------------|------------------------------------------------------------------------------------------------|----------------------------------|
+| 1.1.5-beta2                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1+ |
 | 1.1.4-beta1                   | Experimental support for .NET Core App 2.2. Trace tree in the trace explorer looks very noisy. | Supported for .NET Core App 2.1+ |
 | 1.1.3-beta2                   | Not supported.                                                                                 | Supported for .NET Core App 2.1+ |
 | 1.1.3-beta1                   | Not supported.                                                                                 | Supported for .NET Core App 2.1+ |
 | 1.1.2-beta1                   | Not supported.                                                                                 | Deprecated.                      |
 | 1.0.0-beta1                   | Not supported.                                                                                 | Deprecated.                      |
-
 
 ## Examples
 

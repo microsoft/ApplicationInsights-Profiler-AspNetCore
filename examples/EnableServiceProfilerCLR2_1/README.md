@@ -6,7 +6,7 @@ This example assumes you already have an ASP.NET Core Application. If you are ne
 
 This example is a bare bone project created by calling the following cli command:
 
-```bash
+```shell
 dotnet new mvc -n AppInsightsProfilerExample
 ```
 
@@ -18,7 +18,7 @@ Due to a recent CLR image change, adding a reference to Application Insights SDK
 
 For now, adding the package by:
 
-```bash
+```shell
 dotnet add package Microsoft.ApplicationInsights.AspNetCore
 ```
 
@@ -37,7 +37,7 @@ To enable Service Profiler, NuGet package needs to be installed and proper envir
 ```docker
 ...
 # Adding a reference to hosting startup package
-RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.4-*
+RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.5-*
 ...
 # Light up Application Insights for Kubernetes
 ENV APPINSIGHTS_INSTRUMENTATIONKEY YOUR_APPLICATION_INSIGHTS_KEY
@@ -72,7 +72,7 @@ Just like in [appsettings.json](./appsettings.json).
 
 ## Build and run the Docker image
 
-```bash
+```shell
 docker build -t appinsights-profiler-example --build-arg APPINSIGHTS_KEY=YOUR_APPLICATION_INSIGHTS_KEY .
 docker run -p 8080:80 --name appinsights-profiler-example appinsights-profiler-example
 ```
@@ -89,7 +89,7 @@ Go to [localhost:8080](http://localhost:8080) to access your app in a web browse
 
 If you have set up the Log Level to Information for Service Profiler and you run the container attached, you will see the info logs like it below:
 
-```bash
+```shell
 info: ServiceProfiler.EventPipe.Client.Schedules.TraceSchedule[0]
       Service Profiler session started.
 info: ServiceProfiler.EventPipe.Client.Schedules.TraceSchedule[0]
@@ -102,7 +102,7 @@ When you see Samples number larger than 0, it means trace has been gathered.
 
 You can also check the logs for the container:
 
-```bash
+```shell
 docker container logs myapp
 ```
 

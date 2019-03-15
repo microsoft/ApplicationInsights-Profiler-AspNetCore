@@ -1,17 +1,17 @@
-FROM microsoft/aspnetcore-build:2.0 AS build-env
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env
 WORKDIR /app
 
 # Copy everything and build
 COPY . ./
 
 # Adding a reference to hosting startup package
-RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.4-*
+RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.5-*
 
 # Restore & publish the app
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
-FROM microsoft/aspnetcore:2.0
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
 
 # Create an argument to allow docker builder to passing in application insights key.
 # For example: docker build . --build-arg APPINSIGHTS_KEY=YOUR_APPLICATIONINSIGHTS_INSTRUMENTATION_KEY
