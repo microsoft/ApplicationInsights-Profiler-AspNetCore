@@ -10,6 +10,18 @@ Create a ASP.NET Core **2.2** WebAPI project, give it a name, for example `Enabl
 
 ![Create project dialog](./.media/001_CreateProject.png)
 
+To make it real, make use the following code to add some delay in the controllers to simulate the bottleneck:
+
+```CSharp
+private void SimulateDelay()
+{
+    // Delay for 500ms to 2s to simulate a bottleneck.
+    Thread.Sleep((new Random()).Next(500, 2000));
+}
+```
+
+Reference [ValuesController.cs](./EnableSPInVSWin/Controllers/ValuesController.cs) for full code.
+
 ## Enable Application Insights
 
 Enable application insights by using the menu: `Add` | `Application Insights Telemetry ...` and follow the wizard until Application Insights is fully configured:

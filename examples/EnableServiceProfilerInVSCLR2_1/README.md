@@ -12,6 +12,18 @@ During the creation of the project, we will enable the docker support like this:
 
 The same goal could be reached by adding docker support to an existing project like it here: [Visual Studio Tools for Docker with ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker).
 
+To make it real, make use the following code to add some delay in the controllers to simulate the bottleneck:
+
+```CSharp
+private void SimulateDelay()
+{
+    // Delay for 500ms to 2s to simulate a bottleneck.
+    Thread.Sleep((new Random()).Next(500, 2000));
+}
+```
+
+Reference [HomeController.cs](./AppInsightsProfilerExample/Controllers/HomeController.cs) for full code.
+
 ## Enable Application Insights
 
 Add support for application insights by using the context menu: `Add` | `Application Insights Telemetry...` and then follow the wizard:

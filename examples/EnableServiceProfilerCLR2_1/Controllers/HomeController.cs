@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AppInsightsProfilerExample.Models;
@@ -12,11 +13,13 @@ namespace AppInsightsProfilerExample.Controllers
     {
         public IActionResult Index()
         {
+            SimulateDelay();
             return View();
         }
 
         public IActionResult About()
         {
+            SimulateDelay();
             ViewData["Message"] = "Your application description page.";
 
             return View();
@@ -24,6 +27,7 @@ namespace AppInsightsProfilerExample.Controllers
 
         public IActionResult Contact()
         {
+            SimulateDelay();
             ViewData["Message"] = "Your contact page.";
 
             return View();
@@ -38,6 +42,12 @@ namespace AppInsightsProfilerExample.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private void SimulateDelay()
+        {
+            // Delay for 500ms to 2s to simulate a bottleneck.
+            Thread.Sleep((new Random()).Next(500, 2000));
         }
     }
 }

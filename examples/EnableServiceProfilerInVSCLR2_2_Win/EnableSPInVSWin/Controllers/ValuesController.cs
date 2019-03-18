@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,7 @@ namespace EnableSPInVSWin.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            SimulateDelay();
             return new string[] { "value1", "value2" };
         }
 
@@ -21,6 +23,7 @@ namespace EnableSPInVSWin.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
+            SimulateDelay();
             return "value";
         }
 
@@ -40,6 +43,12 @@ namespace EnableSPInVSWin.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        private void SimulateDelay()
+        {
+            // Delay for 500ms to 2s to simulate a bottleneck.
+            Thread.Sleep((new Random()).Next(500, 2000));
         }
     }
 }
