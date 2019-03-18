@@ -10,6 +10,18 @@ This example is a bare bone project created by calling the following cli command
 dotnet new mvc -n AppInsightsProfilerExample
 ```
 
+To make it real, make use the following code to add some delay in the controllers to simulate the bottleneck:
+
+```CSharp
+private void SimulateDelay()
+{
+    // Delay for 500ms to 2s to simulate a bottleneck.
+    Thread.Sleep((new Random()).Next(500, 2000));
+}
+```
+
+Reference [HomeController.cs](./Controllers/HomeController.cs) for full code.
+
 ## Reference Application Insights SDK
 
 _Note:_ You can skip this step if you are using 1.1.3-beta1 or above.
