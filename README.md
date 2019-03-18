@@ -14,6 +14,38 @@ This is the project home page for App Services Linux profiler. Our NuGet package
     dotnet new webapi -n ProfilerEnabledWebAPI
     ```
 
+To make it real, make use the following code to add some delay in the controllers to simulate the bottleneck:
+
+```CSharp
+private void SimulateDelay()
+{
+    // Delay for 500ms to 2s to simulate a bottleneck.
+    Thread.Sleep((new Random()).Next(500, 2000));
+}
+```
+
+And call it from the controller methods:
+
+```CSharp
+// GET api/values
+[HttpGet]
+public ActionResult<IEnumerable<string>> Get()
+{
+    SimulateDelay();  // Bottleneck
+    return new string[] { "value1", "value2" };
+}
+
+// GET api/values/5
+[HttpGet("{id}")]
+public ActionResult<string> Get(int id)
+{
+    SimulateDelay();  // Bottleneck
+    return "value";
+}
+```
+
+Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/EnableSPInVSWin/Controllers/ValuesController.cs) for full code.
+
 * Add the NuGet package
 
     ```shell
