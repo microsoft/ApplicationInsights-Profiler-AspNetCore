@@ -49,7 +49,7 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
 * Add the NuGet package
 
     ```shell
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.5-*
+    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.6-*
     ```
 
     _Note: Find the latest package from the [NuGet.org here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)._
@@ -133,6 +133,7 @@ You have been start to run the the WebApi with Profiler on.
 
 | Application Insights Profiler | Windows                                                                                        | Linux                            |
 |-------------------------------|------------------------------------------------------------------------------------------------|----------------------------------|
+| 1.1.6-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1+ |
 | 1.1.5-beta2                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1+ |
 | 1.1.4-beta1                   | Experimental support for .NET Core App 2.2. Trace tree in the trace explorer looks very noisy. | Supported for .NET Core App 2.1+ |
 | 1.1.3-beta2                   | Not supported.                                                                                 | Supported for .NET Core App 2.1+ |
