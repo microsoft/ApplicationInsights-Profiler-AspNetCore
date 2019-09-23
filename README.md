@@ -53,7 +53,7 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
 * Add the NuGet package
 
     ```shell
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.6-*
+    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.7-*
     ```
 
     _Note: Find the latest package from the [NuGet.org here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)._
@@ -68,20 +68,12 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
     }
     ```
 
-* Enable Application Insights in `Program.cs`:
-
-    ```csharp
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        WebHost.CreateDefaultBuilder(args)
-            .UseApplicationInsights() // Add this line of code to Enable Application Insights
-            .UseStartup<Startup>();
-    ```
-
 * Enable Profiler in `Startup.cs`:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddApplicationInsightsTelemetry(); // Enable Applicaiton Insights telemetry
         services.AddServiceProfiler(); // Add this line of code to Enable Profiler
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
     }
