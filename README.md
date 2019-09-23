@@ -135,15 +135,16 @@ You have been start to run the the WebApi with Profiler on.
 
 ## Supported Versions
 
-| Application Insights Profiler | Windows                                                                                        | Linux                            |
-|-------------------------------|------------------------------------------------------------------------------------------------|----------------------------------|
-| 1.1.6-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1+ |
-| 1.1.5-beta2                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1+ |
-| 1.1.4-beta1                   | Experimental support for .NET Core App 2.2. Trace tree in the trace explorer looks very noisy. | Supported for .NET Core App 2.1+ |
-| 1.1.3-beta2                   | Not supported.                                                                                 | Supported for .NET Core App 2.1+ |
-| 1.1.3-beta1                   | Not supported.                                                                                 | Supported for .NET Core App 2.1+ |
-| 1.1.2-beta1                   | Not supported.                                                                                 | Deprecated.                      |
-| 1.0.0-beta1                   | Not supported.                                                                                 | Deprecated.                      |
+| Application Insights Profiler | Windows                                                                                        | Linux                                     |
+|-------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
+| 1.1.7-beta1                   | Expreimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.1, 2.2, 3.0 |
+| 1.1.6-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.5-beta2                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.4-beta1                   | Experimental support for .NET Core App 2.2. Trace tree in the trace explorer looks very noisy. | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.3-beta2                   | Not supported.                                                                                 | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.3-beta1                   | Not supported.                                                                                 | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.2-beta1                   | Not supported.                                                                                 | Deprecated.                               |
+| 1.0.0-beta1                   | Not supported.                                                                                 | Deprecated.                               |
 
 ## Examples
 
