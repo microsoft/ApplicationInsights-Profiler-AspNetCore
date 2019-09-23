@@ -1,5 +1,9 @@
 # Application Insights Profiler for Asp.Net core on Linux App Services
 
+## Announcement
+.NET Core 3.0 is supported now! Check out the new version: [1.1.7-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta1).
+
+## Description
 This is the project home page for App Services Linux profiler. Our NuGet package can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
 
 **Notice:** It is highly recommended to use `Application Insights Profiler` with [CLR 2.1](https://dot.net) (shipped with Dotnet Core SDK 2.1.300) and above since there are fixes for fundamental reliability issues.
