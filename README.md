@@ -2,7 +2,7 @@
 
 ## Announcement
 ~~.NET Core 3.0 is supported now! Check out the new version: [1.1.7-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta1).~~
-There is an issue in 1.1.7-beta1 to support .NET Core 3.0 blocking the Profiling to finish. We are investigating it.
+The issue in 1.1.7-beta1 for .NET Core 3.0 has been fixed. Please update to [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2).
 
 ## Description
 This is the project home page for App Services Linux profiler. Our NuGet package can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
@@ -130,7 +130,8 @@ You have been start to run the the WebApi with Profiler on.
 
 | Application Insights Profiler | Windows                                                                                        | Linux                                     |
 |-------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
-| 1.1.7-beta1                   | Expreimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.1, 2.2, 3.0 |
+| [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2) | Experimental support for .NET Core App 2.2, 3.0 | Supported for .NET Core App 2.1, 2.2, 3.0 |
+| 1.1.7-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
 | 1.1.6-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
 | 1.1.5-beta2                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
 | 1.1.4-beta1                   | Experimental support for .NET Core App 2.2. Trace tree in the trace explorer looks very noisy. | Supported for .NET Core App 2.1, 2.2      |
@@ -138,6 +139,7 @@ You have been start to run the the WebApi with Profiler on.
 | 1.1.3-beta1                   | Not supported.                                                                                 | Supported for .NET Core App 2.1, 2.2      |
 | 1.1.2-beta1                   | Not supported.                                                                                 | Deprecated.                               |
 | 1.0.0-beta1                   | Not supported.                                                                                 | Deprecated.                               |
+
 
 ## Examples
 
