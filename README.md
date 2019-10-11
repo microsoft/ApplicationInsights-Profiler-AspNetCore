@@ -74,7 +74,7 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddApplicationInsightsTelemetry(); // Enable Applicaiton Insights telemetry
+        services.AddApplicationInsightsTelemetry(); // Enable Application Insights telemetry
         services.AddServiceProfiler(); // Add this line of code to Enable Profiler
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
     }
