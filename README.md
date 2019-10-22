@@ -1,5 +1,12 @@
 # Application Insights Profiler for Asp.Net core on Linux App Services
 
+## Announcement
+
+~~.NET Core 3.0 is supported now! Check out the new version: [1.1.7-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta1).~~
+The issue in 1.1.7-beta1 for .NET Core 3.0 has been fixed. Please update to [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2).
+
+## Description
+
 This is the project home page for App Services Linux profiler. Our NuGet package can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
 
 **Notice:** It is highly recommended to use `Application Insights Profiler` with [CLR 2.1](https://dot.net) (shipped with Dotnet Core SDK 2.1.300) and above since there are fixes for fundamental reliability issues.
@@ -49,7 +56,7 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
 * Add the NuGet package
 
     ```shell
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.6-*
+    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.7-*
     ```
 
     _Note: Find the latest package from the [NuGet.org here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)._
@@ -64,20 +71,12 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
     }
     ```
 
-* Enable Application Insights in `Program.cs`:
-
-    ```csharp
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        WebHost.CreateDefaultBuilder(args)
-            .UseApplicationInsights() // Add this line of code to Enable Application Insights
-            .UseStartup<Startup>();
-    ```
-
 * Enable Profiler in `Startup.cs`:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddApplicationInsightsTelemetry(); // Enable Application Insights telemetry
         services.AddServiceProfiler(); // Add this line of code to Enable Profiler
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
     }
@@ -131,15 +130,18 @@ You have been start to run the the WebApi with Profiler on.
 
 ## Supported Versions
 
-| Application Insights Profiler | Windows                                                                                        | Linux                            |
-|-------------------------------|------------------------------------------------------------------------------------------------|----------------------------------|
-| 1.1.6-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1+ |
-| 1.1.5-beta2                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1+ |
-| 1.1.4-beta1                   | Experimental support for .NET Core App 2.2. Trace tree in the trace explorer looks very noisy. | Supported for .NET Core App 2.1+ |
-| 1.1.3-beta2                   | Not supported.                                                                                 | Supported for .NET Core App 2.1+ |
-| 1.1.3-beta1                   | Not supported.                                                                                 | Supported for .NET Core App 2.1+ |
-| 1.1.2-beta1                   | Not supported.                                                                                 | Deprecated.                      |
-| 1.0.0-beta1                   | Not supported.                                                                                 | Deprecated.                      |
+| Application Insights Profiler | Windows                                                                                        | Linux                                     |
+|-------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
+| [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2) | Experimental support for .NET Core App 2.2, 3.0 | Supported for .NET Core App 2.1, 2.2, 3.0 |
+| 1.1.7-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.6-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.5-beta2                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.4-beta1                   | Experimental support for .NET Core App 2.2. Trace tree in the trace explorer looks very noisy. | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.3-beta2                   | Not supported.                                                                                 | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.3-beta1                   | Not supported.                                                                                 | Supported for .NET Core App 2.1, 2.2      |
+| 1.1.2-beta1                   | Not supported.                                                                                 | Deprecated.                               |
+| 1.0.0-beta1                   | Not supported.                                                                                 | Deprecated.                               |
+
 
 ## Examples
 
