@@ -40,6 +40,33 @@ dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.0.0-*
         }
 ```
 
+### Optionally, add a bottleneck
+
+To make it fun, make use the following code to add some delay in the controllers to simulate the bottleneck:
+
+```csharp
+using System.Threading;
+...
+private void SimulateDelay()
+{
+    // Delay for 500ms to 2s to simulate a bottleneck.
+    Thread.Sleep((new Random()).Next(500, 2000));
+}
+```
+
+And then, call it from the controller:
+
+```csharp
+[HttpGet]
+public IEnumerable<WeatherForecast> Get()
+{
+    SimulateDelay();
+    var rng = new Random();
+    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+    ...
+}
+```
+
 ### Setup the instrumentation key for debugging
 
 In [appsettings.Development.json](./appsettings.Development.json), add the following configuration:

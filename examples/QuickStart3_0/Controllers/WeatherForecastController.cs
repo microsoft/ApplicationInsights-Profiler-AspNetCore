@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -26,6 +27,7 @@ namespace QuickStart3_0.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            SimulateDelay();
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -34,6 +36,12 @@ namespace QuickStart3_0.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        private void SimulateDelay()
+        {
+            // Delay for 500ms to 2s to simulate a bottleneck.
+            Thread.Sleep((new Random()).Next(500, 2000));
         }
     }
 }
