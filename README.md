@@ -2,7 +2,9 @@
 
 ## Announcement
 
-~~.NET Core 3.0 is supported now! Check out the new version: [1.1.7-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta1).~~
+* Profiler 2.0.0-beta is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta1). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/Migrateto2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
+
+* ~~.NET Core 3.0 is supported now! Check out the new version: [1.1.7-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta1).~~
 The issue in 1.1.7-beta1 for .NET Core 3.0 has been fixed. Please update to [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2).
 
 ## Description
@@ -53,10 +55,11 @@ public ActionResult<string> Get(int id)
 
 Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/EnableSPInVSWin/Controllers/ValuesController.cs) for full code.
 
-* Add the NuGet package
+* Add the NuGet packages
 
     ```shell
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.7-*
+    dotnet add package Microsoft.ApplicationInsights.AspNetCore
+    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.0.0-*
     ```
 
     _Note: Find the latest package from the [NuGet.org here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)._
@@ -78,7 +81,7 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
     {
         services.AddApplicationInsightsTelemetry(); // Enable Application Insights telemetry
         services.AddServiceProfiler(); // Add this line of code to Enable Profiler
-        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        ...
     }
     ```
 
@@ -132,6 +135,7 @@ You have been start to run the the WebApi with Profiler on.
 
 | Application Insights Profiler | Windows                                                                                        | Linux                                     |
 |-------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
+| [2.0.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta1) | Experimental support for .NET Core App 2.2, 3.0 | Supported for .NET Core App 2.2, 3.0 |
 | [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2) | Experimental support for .NET Core App 2.2, 3.0 | Supported for .NET Core App 2.1, 2.2, 3.0 |
 | 1.1.7-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
 | 1.1.6-beta1                   | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
@@ -141,7 +145,6 @@ You have been start to run the the WebApi with Profiler on.
 | 1.1.3-beta1                   | Not supported.                                                                                 | Supported for .NET Core App 2.1, 2.2      |
 | 1.1.2-beta1                   | Not supported.                                                                                 | Deprecated.                               |
 | 1.0.0-beta1                   | Not supported.                                                                                 | Deprecated.                               |
-
 
 ## Examples
 
