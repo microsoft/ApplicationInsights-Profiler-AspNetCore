@@ -123,7 +123,7 @@ info: ServiceProfiler.EventPipe.Client.ServiceProfilerProvider[0]
 
 ### Open the trace form Azure Portal
 
-Get a coffee and wait for 2 minutes - the backend needs some time, usually a couple of minutes, to ingest the data.
+Get a coffee and wait for a couple of minutes - the backend needs some time, usually a 2 minutes, to ingest the data.
 
 Then, open the application insights resource in Azure Portal, go to the **performance** blade, and use the button of `Configure Profiler`. There, you are going to see all profiling sessions:
 
