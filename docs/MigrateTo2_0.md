@@ -25,3 +25,22 @@ There are changes in the configurations. Refer to [What's new](./WhatIsNew2_0#Ne
 1. Update the method of `AddServiceProfiler` to remove the option of **Interval** if it is used.
 
 And that's it.
+
+## Stop using hosting startup
+
+Hosting startup is not supported for .NET Core 3.0 in 2.0.0-beta1.
+
+1. **Stop** setting environment variable: **ASPNETCORE_HOSTINGSTARTUPASSEMBLIES**=Microsoft.ApplicationInsights.Profiler.AspNetCore
+1. Enable Profile through the code in `Startup.cs` like this:
+
+  ```csharp
+    // This method gets called by the runtime. Use this method to add services to the container.
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+        services.AddControllers();
+        // Adding the following lines to enable application insights and profiler.
+        services.AddApplicationInsightsTelemetry();
+        services.AddServiceProfiler();
+    }
+  ```
