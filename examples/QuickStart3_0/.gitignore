@@ -1,0 +1,5 @@
+bin/
+obj/
+global.json
+nuget.config
+pkgs/
