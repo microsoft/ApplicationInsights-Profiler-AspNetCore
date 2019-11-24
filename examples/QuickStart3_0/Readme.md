@@ -71,7 +71,7 @@ public IEnumerable<WeatherForecast> Get()
 
 In [appsettings.Development.json](./appsettings.Development.json), add the following configuration:
 
-```json
+```jsonc
 {
     ...
     "ApplicationInsights": {
