@@ -1,5 +1,9 @@
 # Application Insights Profiler for Asp.Net core on Linux App Services
 
+## Blocking issue
+
+There is a recent backend change that prevents the profile trace from showing up. It impacts .NET Core apps that uses Application Insights SDK 2.8 and above. Please see the details of the issue [#68](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/68) for a temperory workaround.
+
 ## Announcement
 
 * Profiler 2.0.0-beta4 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta4). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
