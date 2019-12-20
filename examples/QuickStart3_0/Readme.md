@@ -39,14 +39,8 @@ using System.Diagnostics;
             // Adding the following lines to enable application insights and profiler.
             services.AddApplicationInsightsTelemetry();
             services.AddServiceProfiler();
-
-            // Workaround. See details in issue #68.
-            Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
-            Activity.ForceDefaultIdFormat = true;
-            // ~
         }
 ```
-Check out the details in [issue#68](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/68) for the latest status of the workaround.
 
 ### Optionally, add a bottleneck
 

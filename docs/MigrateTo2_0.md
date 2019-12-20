@@ -28,7 +28,7 @@ And that's it.
 
 ## Stop using hosting startup
 
-Hosting startup is not supported for .NET Core 3.0 in 2.0.0-beta1.
+Hosting startup is not supported for .NET Core 3.0 in 2.0.0-beta.
 
 1. **Stop** setting environment variable: **ASPNETCORE_HOSTINGSTARTUPASSEMBLIES**=Microsoft.ApplicationInsights.Profiler.AspNetCore
 1. Enable Profile through the code in `Startup.cs` like this:
