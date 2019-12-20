@@ -2,13 +2,16 @@
 
 ## Blocking issue
 
-There is a recent backend change that prevents the profile trace from showing up. It impacts .NET Core apps that uses Application Insights SDK 2.8 and above. Please see the details of the issue [#68](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/68) for a temperory workaround.
+* The server side issue of [#68](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/68) have been addressed.
 
 ## Announcement
 
-* Profiler 2.0.0-beta4 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta4). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
+* Profiler 2.0.0-beta5 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta5). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
 
-* The issue of losing big number of traces in previous 2.0.0-* has been addressed.
+  * Sampling requests to avoid recording large amount of similar requests. [#64](issues/64)
+  * Trace uploader size has been reduced to 5.7M from 10M. [#70](issues/70).
+  * Skip SSL configuration is now honored. [#69](issues/69).
+  * Fixed some other small issues.
 
 ## Description
 
@@ -142,6 +145,7 @@ You have been start to run the the WebApi with Profiler on.
 
 | Application Insights Profiler                                                                               | Windows                                                                                        | Linux                                     |
 |-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
+| [2.0.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta5) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
 | [2.0.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta4) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
 | [2.0.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta3) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
 | [2.0.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta2) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
@@ -158,7 +162,9 @@ You have been start to run the the WebApi with Profiler on.
 
 ## Examples
 
-* [Enable Service Profiler for containerized ASP.NET Core application](./examples/EnableServiceProfilerCLR2_1/README.md).
+* [Enable Service Profiler for containerized ASP.NET Core application (.NET Core 3.x)](./examples/QuickStart3_0/Readme.md).
+
+* [Enable Service Profiler for containerized ASP.NET Core application (.NET Core 2.x)](./examples/EnableServiceProfilerCLR2_1/README.md).
 
 * [Enable Service Profiler for ASP.NET Core application in Visual Studio](./examples/EnableServiceProfilerInVSCLR2_1).
 
