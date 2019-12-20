@@ -29,6 +29,8 @@ dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.0.0-*
 ### Update the code in `Startup.cs` to enable application insights and the profiler
 
 ```csharp
+using System.Diagnostics;
+...
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -37,8 +39,14 @@ dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.0.0-*
             // Adding the following lines to enable application insights and profiler.
             services.AddApplicationInsightsTelemetry();
             services.AddServiceProfiler();
+
+            // Workaround. See details in issue #68.
+            Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
+            Activity.ForceDefaultIdFormat = true;
+            // ~
         }
 ```
+Check out the details in [issue#68](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/68) for the latest status of the workaround.
 
 ### Optionally, add a bottleneck
 
@@ -71,7 +79,7 @@ public IEnumerable<WeatherForecast> Get()
 
 In [appsettings.Development.json](./appsettings.Development.json), add the following configuration:
 
-```json
+```jsonc
 {
     ...
     "ApplicationInsights": {
