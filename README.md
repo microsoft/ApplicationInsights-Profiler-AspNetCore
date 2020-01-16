@@ -142,6 +142,7 @@ You have been start to run the the WebApi with Profiler on.
 * [The call tree filter](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/CallTreeFilter.md).
 
 ## Supported Versions
+The profiling technology is based on .NET Core runtime. We do not support applications run on .NET Framework. See the table below for supported runtime.
 
 | Application Insights Profiler                                                                               | Windows                                                                                        | Linux                                     |
 |-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
