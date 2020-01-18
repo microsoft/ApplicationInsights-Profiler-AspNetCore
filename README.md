@@ -36,8 +36,8 @@ using System.Threading;
 ...
 private void SimulateDelay()
 {
-    // Delay for 500ms to 2s to simulate a bottleneck.
-    Thread.Sleep((new Random()).Next(500, 2000));
+    // Delay for 200ms to 5s to simulate a bottleneck.
+    Thread.Sleep((new Random()).Next(200, 5000));
 }
 ```
 
