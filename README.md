@@ -1,17 +1,14 @@
 # Application Insights Profiler for Asp.Net core on Linux App Services
 
-## Blocking issue
-
-* The server side issue of [#68](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/68) have been addressed.
-
 ## Announcement
 
-* Profiler 2.0.0-beta5 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta5). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
+* Profiler 2.1.0-beta1 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta1). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
 
   * Recent bug fixes:
-    * Sampling requests to avoid recording large amount of similar requests. [#64](../../issues/64)
-    * Trace uploader size has been reduced to 5.7M from 10M. [#70](../../issues/70).
-    * Skip SSL configuration is now honored. [#69](../../issues/69).
+    * Hosting startup for .NET Core 3.x runtime is supported. // TODO: Link to instructions.
+    * Reduce uploader size by having targeted binaries. [#70](../../issues/70)
+    * AI connection string is supported. // TODO: Update the configuration page.
+
 
 ## Description
 
