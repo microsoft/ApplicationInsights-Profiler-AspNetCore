@@ -66,7 +66,7 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
 
     ```shell
     dotnet add package Microsoft.ApplicationInsights.AspNetCore
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.0.0-*
+    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.1.0-*
     ```
 
     _Note: Find the latest package from the [NuGet.org here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)._

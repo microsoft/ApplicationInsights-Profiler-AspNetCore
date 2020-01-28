@@ -7,7 +7,7 @@ There are break changes between 1.x and 2.0 for Application Insights Profiler bu
 * To use .NET Core CLI:
 
 ```shell
-dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore --version 2.0.0-*
+dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore --version 2.1.0-*
 ```
 
 * To use package manager:
@@ -26,21 +26,11 @@ There are changes in the configurations. Refer to [What's new](./WhatIsNew2_0#Ne
 
 And that's it.
 
-## Stop using hosting startup
+## Update to use the new hosting startup
 
-Hosting startup is not supported for .NET Core 3.0 in 2.0.0-beta.
+Hosting startup is supported for .NET Core 3.0 in 2.1.0-beta1 or above.
 
-1. **Stop** setting environment variable: **ASPNETCORE_HOSTINGSTARTUPASSEMBLIES**=Microsoft.ApplicationInsights.Profiler.AspNetCore
-1. Enable Profile through the code in `Startup.cs` like this:
+1. **Stop** setting environment variable specific to .NET Core 2.x: **ASPNETCORE_HOSTINGSTARTUPASSEMBLIES**=Microsoft.ApplicationInsights.Profiler.AspNetCore
+2. **Use** the environment variable: **ASPNETCORE_HOSTINGSTARTUPASSEMBLIES**=Microsoft.ApplicationInsights.Profiler.HostingStartup30
 
-  ```csharp
-    // This method gets called by the runtime. Use this method to add services to the container.
-    public void ConfigureServices(IServiceCollection services)
-    {
-        ...
-        services.AddControllers();
-        // Adding the following lines to enable application insights and profiler.
-        services.AddApplicationInsightsTelemetry();
-        services.AddServiceProfiler();
-    }
-  ```
+Read [this post](../examples/HostingStartupCLR3/Readme.md) for more details.
