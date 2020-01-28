@@ -4,11 +4,13 @@
 
 * Profiler 2.1.0-beta1 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta1). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
 
-  * Recent bug fixes:
-    * Hosting startup for .NET Core 3.x runtime is supported. // TODO: Link to instructions.
-    * Reduce uploader size by having targeted binaries. [#70](../../issues/70)
-    * AI connection string is supported. // TODO: Update the configuration page.
+  * [Break change] Application Insights Profiler 2.1.0-* depends on [Application Insights SDK for ASP.NET Core 2.12.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.12.0) and above. It will be referenced implicitly.
 
+  * [New Feature] Hosting startup for ASP.NET Core 3.x application is supported for 2.1.0-beta1 and above. Refer to [readme](examples/HostingStartupCLR3/Readme.md) for how to use it.
+
+  * Recent bug fixes:
+    * Reduce uploader size by having targeted binaries. [#70](../../issues/70)
+    * Application Insights connection string is supported. Check out the usage in [Configurations](./Configurations.md#Application-Insights-Connection-String).
 
 ## Description
 
@@ -139,10 +141,12 @@ You have been start to run the the WebApi with Profiler on.
 * [The call tree filter](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/CallTreeFilter.md).
 
 ## Supported Versions
+
 The profiling technology is based on .NET Core runtime. We do not support applications run on .NET Framework. See the table below for supported runtime.
 
 | Application Insights Profiler                                                                               | Windows                                                                                        | Linux                                     |
 |-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
+| [2.1.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta1) | Experimental support for .NET Core App 2.2, 3.0, 3.1                                           | Supported for .NET Core App 2.2, 3.0, 3.1 |
 | [2.0.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta5) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
 | [2.0.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta4) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
 | [2.0.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta3) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |

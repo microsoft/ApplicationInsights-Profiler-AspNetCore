@@ -50,17 +50,19 @@ All other ways document here: [Configuration in ASP.NET Core](https://docs.micro
 
 Here lists all supported configurations.
 
-| Key                       | Value/Types | Default Value | Description                                                                                                                                                                   |
-|---------------------------|-------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| BufferSizeInMB            | Integer     | 250           | Circular Buffer size. For 2 minutes session, it usually generates less than 200MB traces. Reduce the size for saving resources, increase the size for longer sessions.        |
-| Duration                  | TimeSpan    | 00:02:00      | The duration of a session.                                                                                                                                                    |
-| Interval                  | TimeSpan    | 00:58:00      | The interval between sessions.                                                                                                                                                |
-| InitialDelay              | TimeSpan    | 00:00:00      | Delay before starting the very first session after the application starts up.                                                                                                 |
-| ProvideAnonymousTelemetry | Boolean     | true          | Sends anonymous telemetry data to Microsoft to make the product better when sets to true.                                                                                     |
-| IsDisabled                | Boolean     | false         | Kill switch to turn off Profiler.                                                                                                                                             |
-| IsSkipCompatibilityTest   | Boolean     | false         | Bypass the check of platform compatibility testing to turn Profiler on by force. This is introduced mainly for internal use for evaluation and might cause unexpected result. |
-| SkipUpload                | Boolean     | false         | Skip uploading the traces to the back-end. Notice: Skipping uploading will always preserve the trace file.                                                                    |
-| PreserveTraceFile         | Boolean     | false         | The trace file will be deleted once uploaded by default. Set this to true when you want to keep the local trace files.                                                        |
+| Key                               | Value/Types | Default Value | Description                                                                                                                                                                                                                       |   |
+|-----------------------------------|-------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| BufferSizeInMB                    | Integer     | 250           | Circular Buffer size. For 2 minutes session, it usually generates less than 200MB traces. Reduce the size for saving resources, increase the size for longer sessions.                                                            |   |
+| Duration                          | TimeSpan    | 00:02:00      | The duration of a session.                                                                                                                                                                                                        |   |
+| InitialDelay                      | TimeSpan    | 00:00:00      | Delay before starting the very first session after the application starts up.                                                                                                                                                     |   |
+| ConfigurationUpdateFrequency      | TimeSpan    | 00:00:05      | The frequency for configuration updates for triggers or on demand profiling. This configuration decides how frequent the agent pulls configurations from the server. Optional, default value is 5 seconds            |   |
+| ProvideAnonymousTelemetry         | Boolean     | true          | Sends anonymous telemetry data to Microsoft to make the product better when sets to true.                                                                                                                                         |   |
+| RandomProfilingOverhead           | Float       | 0.05          | The overhead for random profiling. The rate, in form of percentage, is used to calculate the time of profiling in average per hour. Basically, n = (60 * overhead rate) / profiling-duration. Default value is 0.05. |   |
+| IsDisabled                        | Boolean     | false         | Kill switch to turn off Profiler.                                                                                                                                                                                                 |   |
+| IsSkipCompatibilityTest           | Boolean     | false         | Bypass the check of platform compatibility testing to turn Profiler on by force. This is introduced mainly for internal use for evaluation and might cause unexpected result.                                                     |   |
+| SkipUpload                        | Boolean     | false         | Skip uploading the traces to the back-end. Notice: Skipping uploading will always preserve the trace file.                                                                                                                        |   |
+| PreserveTraceFile                 | Boolean     | false         | The trace file will be deleted once uploaded by default. Set this to true when you want to keep the local trace files.                                                                                                            |   |
+| SkipEndpointCertificateValidation | Boolean     | false         | The value to skip the certificate validation to establish SSL communication with the Endpoint. It is **strongly recommended** to keep this the default value.                                                                  |   |
 
 ## Sets the logging level for Profiler
 
@@ -103,3 +105,21 @@ Here's a complete example of `appsettings.json`:
   }
 }
 ```
+
+## Application Insights Connection String
+
+Application Insights connection string is also supported (For Profiler 2.1.0-beta1 or above) in configuration. For example:
+
+```jsonc
+{
+...
+  "ServiceProfiler": {
+...
+  },
+  "ApplicationInsights": {
+    "ConnectionString": "InstrumentationKey=your-instrumentation-key;IngestionEndpoint=https://anotheringestionEndpoint.io/;..."
+  },
+}
+```
+
+A proper connection string could be found in the Application Insights Resource overview page of the Azure Portal, right below the `Instrumentation Key` field.
