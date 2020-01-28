@@ -23,7 +23,7 @@ The latest Application Insights (2.8+) is required to run on .NET Core 3.0. And 
 
 ```shell
 dotnet add package Microsoft.ApplicationInsights.AspNetCore
-dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.0.0-*
+dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.1.0-*
 ```
 
 ### Update the code in `Startup.cs` to enable application insights and the profiler
