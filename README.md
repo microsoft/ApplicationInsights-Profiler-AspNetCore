@@ -1,17 +1,20 @@
 # Application Insights Profiler for Asp.Net core on Linux App Services
 
-## Blocking issue
-
-* The server side issue of [#68](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/68) have been addressed.
-
 ## Announcement
 
-* Profiler 2.0.0-beta5 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta5). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
+* Profiler 2.1.0-beta2 is **NOT** recommended. There is a bug that impacts the ASP.NET Core application starting up. See bug #85 for details. Please wait for 2.1.0-beta3.
 
-  * Sampling requests to avoid recording large amount of similar requests. [#64](issues/64)
-  * Trace uploader size has been reduced to 5.7M from 10M. [#70](issues/70).
-  * Skip SSL configuration is now honored. [#69](issues/69).
-  * Fixed some other small issues.
+## Previous announcements
+
+* Profiler 2.1.0-beta1 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta1). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
+
+  * [Break change] Application Insights Profiler 2.1.0-* depends on [Application Insights SDK for ASP.NET Core 2.12.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.12.0) and above. It will be referenced implicitly.
+
+  * [New Feature] Hosting startup for ASP.NET Core 3.x application is supported for 2.1.0-beta1 and above. Refer to [readme](examples/HostingStartupCLR3/Readme.md) for how to use it.
+
+  * Recent bug fixes:
+    * Reduce uploader size by having targeted binaries. [#70](../../issues/70)
+    * Application Insights connection string is supported. Check out the usage in [Configurations](./Configurations.md#Application-Insights-Connection-String).
 
 ## Description
 
@@ -36,8 +39,8 @@ using System.Threading;
 ...
 private void SimulateDelay()
 {
-    // Delay for 500ms to 2s to simulate a bottleneck.
-    Thread.Sleep((new Random()).Next(500, 2000));
+    // Delay for 200ms to 5s to simulate a bottleneck.
+    Thread.Sleep((new Random()).Next(200, 5000));
 }
 ```
 
@@ -67,7 +70,7 @@ Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/E
 
     ```shell
     dotnet add package Microsoft.ApplicationInsights.AspNetCore
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.0.0-*
+    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.1.0-*
     ```
 
     _Note: Find the latest package from the [NuGet.org here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)._
@@ -143,8 +146,11 @@ You have been start to run the the WebApi with Profiler on.
 
 ## Supported Versions
 
+The profiling technology is based on .NET Core runtime. We do not support applications run on .NET Framework. See the table below for supported runtime.
+
 | Application Insights Profiler                                                                               | Windows                                                                                        | Linux                                     |
 |-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
+| [2.1.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta1) | Experimental support for .NET Core App 2.2, 3.0, 3.1                                           | Supported for .NET Core App 2.2, 3.0, 3.1 |
 | [2.0.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta5) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
 | [2.0.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta4) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
 | [2.0.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta3) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
