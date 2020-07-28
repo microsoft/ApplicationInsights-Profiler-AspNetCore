@@ -2,6 +2,8 @@
 
 ## Announcement
 
+* Profiler 2.1.0-beta3 is published. Please find the nuget package here: [2.1.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta3).
+
 * Profiler 2.1.0-beta2 is **NOT** recommended. There is a bug that impacts the ASP.NET Core application starting up. See bug #85 for details. Please wait for 2.1.0-beta3.
 
 ## Previous announcements
