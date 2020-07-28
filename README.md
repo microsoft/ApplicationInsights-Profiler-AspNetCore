@@ -1,12 +1,12 @@
-# Application Insights Profiler for Asp.Net core on Linux App Services
+# Application Insights Profiler for ASP.NET Core
 
 ## Announcement
 
-* Profiler 2.1.0-beta3 is published. Please find the nuget package here: [2.1.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta3).
-
-* Profiler 2.1.0-beta2 is **NOT** recommended. There is a bug that impacts the ASP.NET Core application starting up. See bug #85 for details. Please wait for 2.1.0-beta3.
+* Profiler 2.1.0-beta4 is published. Please find the NuGet package here: [2.1.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore).
 
 ## Previous announcements
+
+* Profiler 2.1.0-beta2 is **NOT** recommended. There is a bug that impacts the ASP.NET Core application starting up. See bug #85 for details. Please wait for 2.1.0-beta3.
 
 * Profiler 2.1.0-beta1 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta1). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
 
@@ -26,17 +26,43 @@ This is the project home page for `Microsoft Application Insights Profiler for A
 
 ## Get Started
 
-_The following steps based are based on ASP.NET Core 2.2 project. Refer to [Quick Start](./examples/QuickStart3_0/Readme.md) for more specific steps for ASP.NET Core 3.0 projects._
+Refer to [Quick Start](./examples/QuickStart3_0/Readme.md) for more specific steps for ASP.NET Core 3.0 projects._
 
-* Create a WebApi project
+* Create an application
 
-    ```shell
-    dotnet new webapi -n ProfilerEnabledWebAPI
-    ```
+```shell
+dotnet new webapi
+```
 
-To make it real, make use the following code to add some delay in the controllers to simulate the bottleneck:
+* Add NuGet packages
 
-```CSharp
+```shell
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.1.0-*
+```
+
+* Enable Application Insights Profiler
+
+Open [Startup.cs](./examples/QuickStart3_0/Startup.cs)
+
+```csharp
+using System.Diagnostics;
+...
+// This method gets called by the runtime. Use this method to add services to the container.
+public void ConfigureServices(IServiceCollection services)
+{
+    ...
+    // Adding the following lines to enable application insights and profiler.
+    services.AddApplicationInsightsTelemetry();
+    services.AddServiceProfiler();
+}
+```
+
+* Add a bottleneck
+
+To make it real, make use the following code to add some delay in the [WeatherForecastController.cs](examples/QuickStart3_0/Controllers/WeatherForecastController.cs) to simulate the bottleneck:
+
+```csharp
 using System.Threading;
 ...
 private void SimulateDelay()
@@ -48,125 +74,67 @@ private void SimulateDelay()
 
 And call it from the controller methods:
 
-```CSharp
-// GET api/values
+```csharp
 [HttpGet]
-public ActionResult<IEnumerable<string>> Get()
+public IEnumerable<WeatherForecast> Get()
 {
-    SimulateDelay();  // Bottleneck
-    return new string[] { "value1", "value2" };
-}
-
-// GET api/values/5
-[HttpGet("{id}")]
-public ActionResult<string> Get(int id)
-{
-    SimulateDelay();  // Bottleneck
-    return "value";
+    SimulateDelay();
+    var rng = new Random();
+    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+    ...
 }
 ```
 
-Reference [ValuesController.cs](./examples/EnableServiceProfilerInVSCLR2_2_Win/EnableSPInVSWin/Controllers/ValuesController.cs) for full code.
+* Setup the instrumentation key for debugging
 
-* Add the NuGet packages
+In [appsettings.Development.json](examples/QuickStart3_0/appsettings.Development.json), add the following configuration:
 
-    ```shell
-    dotnet add package Microsoft.ApplicationInsights.AspNetCore
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.1.0-*
-    ```
-
-    _Note: Find the latest package from the [NuGet.org here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)._
-
-* [Create an Application Insights in Azure Portal](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-dotnetcore-quick-start?toc=/azure/azure-monitor/toc.json#log-in-to-the-azure-portal), set Application Insights instrumentation key in `appsettings.Development.json`:
-
-    ```json
-    {
-        "ApplicationInsights": {
-            "InstrumentationKey": "replace-with-your-instrumentation-key"
-        }
-    }
-    ```
-
-* Enable Profiler in `Startup.cs`:
-
-    ```csharp
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddApplicationInsightsTelemetry(); // Enable Application Insights telemetry
-        services.AddServiceProfiler(); // Add this line of code to Enable Profiler
-        ...
-    }
-    ```
-
-* Run the code:
-
-    ```shell
-    dotnet run
-    ```
-
-    And you will see the following logs, indicating Profiler is up and running:
-
-    ```shell
-    dbug: ServiceProfiler.EventPipe.AspNetCore.ServiceProfilerStartupFilter[0]
-        Constructing ServiceProfilerStartupFilter
-    dbug: ServiceProfiler.EventPipe.AspNetCore.ServiceProfilerStartupFilter[0]
-        User Settings:
-        {
-            "BufferSizeInMB": 250,
-        }
-    dbug: ServiceProfiler.EventPipe.Client.Utilities.RuntimeCompatibilityUtility[0]
-        Checking compatibility for Linux platform.
-    dbug: ServiceProfiler.EventPipe.AspNetCore.ServiceProfilerStartupFilter[0]
-        Pass Runtime Compatibility test.
-    dbug: ServiceProfiler.EventPipe.Client.Schedules.TraceSchedule[0]
-        Entering TriggerStart - initial: True.
-    dbug: ServiceProfiler.EventPipe.Client.Schedules.TraceSchedule[0]
-        Entering StartAsync, idle for the interval of 3000 ms.
-    Hosting environment: Development
-    Content root path: /mnt/d/ApplicationInsightsProfiler
-    Now listening on: https://localhost:5001
-    Now listening on: http://localhost:5000
-    Application started. Press Ctrl+C to shut down.
+```jsonc
+{
     ...
-    ```
+    "ApplicationInsights": {
+        "InstrumentationKey": "replace-with-your-instrumentation-key"
+    }
+    ...
+}
+```
 
-You have been start to run the the WebApi with Profiler on.
+* Run the WebAPI, generate traffic for profiling
 
-* Generate some traffic for traces by visiting during the 2 minutes profiling session:
+To run your application locally:
 
-    ```url
-    https://localhost:5001/api/values
-    ```
+```shell
+dotnet run
+```
 
-## Learn More
+At the beginning of the application, **OneTimeSchedulingPolicy** will immediately kick in, profiling for 2 minutes. Hit the endpoint in a browser during the profiling session in your browser:
 
-* [Profiler Sessions](./ProfilerSessions.md) - describes when the profiler starts, stops and what is traced.
+```url
+https://localhost:5001/weatherforecast
+```
+
+* Analyze the trace form Azure Portal
+
+Get a coffee and wait for a couple of minutes - the backend needs some time, usually a 2 minutes, to ingest the data.
+
+Then, open the application insights resource in Azure Portal, go to the **performance** blade, and use the button of `Configure Profiler`. There, you are going to see all profiling sessions:
+
+![Profiler Trace Sessions](./media/OneTimeProfilerTrace.png)
+
+_Tip: Click on the trace to open the trace analyzer._
+
+## Next
+
 * [Configurations for the Profiler](./Configurations.md) - describes how to customize various settings of the profiler.
-* [Trace Analysis](./https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-overview?toc=/azure/azure-monitor/toc.json#view-profiler-data) - introduce the trace analysis.
+* [Dockerize an application with Profiler](./examples/QuickStart3_0/Readme2.md)
+* [Profiler Sessions](./ProfilerSessions.md) - describes when the profiler starts, stops and what is traced.
+* [Trace Analysis](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-overview?toc=/azure/azure-monitor/toc.json#view-profiler-data) - introduce the trace analysis.
 * [Diagnosing a WebAPI experiencing intermittent high CPU using the Application Insights Profiler](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/TriggerProfiler.md).
 * [The call tree filter](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/CallTreeFilter.md).
 
 ## Supported Versions
 
-The profiling technology is based on .NET Core runtime. We do not support applications run on .NET Framework. See the table below for supported runtime.
-
-| Application Insights Profiler                                                                               | Windows                                                                                        | Linux                                     |
-|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
-| [2.1.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta1) | Experimental support for .NET Core App 2.2, 3.0, 3.1                                           | Supported for .NET Core App 2.2, 3.0, 3.1 |
-| [2.0.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta5) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
-| [2.0.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta4) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
-| [2.0.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta3) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
-| [2.0.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta2) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
-| [2.0.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.0.0-beta1) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.2, 3.0      |
-| [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2) | Experimental support for .NET Core App 2.2, 3.0                                                | Supported for .NET Core App 2.1, 2.2, 3.0 |
-| 1.1.7-beta1                                                                                                 | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
-| 1.1.6-beta1                                                                                                 | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
-| 1.1.5-beta2                                                                                                 | Experimental support for .NET Core App 2.2.                                                    | Supported for .NET Core App 2.1, 2.2      |
-| 1.1.4-beta1                                                                                                 | Experimental support for .NET Core App 2.2. Trace tree in the trace explorer looks very noisy. | Supported for .NET Core App 2.1, 2.2      |
-| 1.1.3-beta2                                                                                                 | Not supported.                                                                                 | Supported for .NET Core App 2.1, 2.2      |
-| 1.1.3-beta1                                                                                                 | Not supported.                                                                                 | Supported for .NET Core App 2.1, 2.2      |
-| 1.1.2-beta1                                                                                                 | Not supported.                                                                                 | Deprecated.                               |
-| 1.0.0-beta1                                                                                                 | Not supported.                                                                                 | Deprecated.                               |
+To find out the proper version of the Profiler to use, please refer to [Support Matrix](./SupportMatrix.md).
 
 ## Examples
 
