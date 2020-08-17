@@ -2,21 +2,14 @@
 
 ## Announcement
 
-* Profiler 2.1.0-beta4 is published. Please find the NuGet package here: [2.1.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore).
+* Profiler 2.1.0-beta5 is published. Please find the NuGet package here: [2.1.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta5).
+  * Allows overwrite for default working folder by setting `LocalCacheFolder`. Refer to [Configuration](./Configurations.md) for details.
 
 ## Previous announcements
 
+* Profiler 2.1.0-beta4 is published. Please find the NuGet package here: [2.1.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta4).
+
 * Profiler 2.1.0-beta2 is **NOT** recommended. There is a bug that impacts the ASP.NET Core application starting up. See bug #85 for details. Please wait for 2.1.0-beta3.
-
-* Profiler 2.1.0-beta1 is [available now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta1). Read [What's new](./docs/WhatIsNew2_0.md) and [Migrate to Application Insights Profiler 2.0](./docs/MigrateTo2_0.md). Follow the example of [quick start](./examples/QuickStart3_0/Readme.md) if you are building a new app service.
-
-  * [Break change] Application Insights Profiler 2.1.0-* depends on [Application Insights SDK for ASP.NET Core 2.12.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.12.0) and above. It will be referenced implicitly.
-
-  * [New Feature] Hosting startup for ASP.NET Core 3.x application is supported for 2.1.0-beta1 and above. Refer to [readme](examples/HostingStartupCLR3/Readme.md) for how to use it.
-
-  * Recent bug fixes:
-    * Reduce uploader size by having targeted binaries. [#70](../../issues/70)
-    * Application Insights connection string is supported. Check out the usage in [Configurations](./Configurations.md#Application-Insights-Connection-String).
 
 ## Description
 
@@ -25,8 +18,6 @@ This is the project home page for `Microsoft Application Insights Profiler for A
 ![Profiler Traces](./media/profiler-traces.png)
 
 ## Get Started
-
-Refer to [Quick Start](./examples/QuickStart3_0/Readme.md) for more specific steps for ASP.NET Core 3.0 projects._
 
 * Create an application
 
