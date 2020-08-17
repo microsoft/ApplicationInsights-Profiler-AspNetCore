@@ -63,6 +63,7 @@ Here lists all supported configurations.
 | SkipUpload                        | Boolean     | false         | Skip uploading the traces to the back-end. Notice: Skipping uploading will always preserve the trace file.                                                                                                                        |   |
 | PreserveTraceFile                 | Boolean     | false         | The trace file will be deleted once uploaded by default. Set this to true when you want to keep the local trace files.                                                                                                            |   |
 | SkipEndpointCertificateValidation | Boolean     | false         | The value to skip the certificate validation to establish SSL communication with the Endpoint. It is **strongly recommended** to keep this the default value.                                                                  |   |
+| LocalCacheFolder | String    | User's temp folder.         | Path to the folder for temporary working files, traces for example. The default value is the temp folder depends on the OS. `/tmp/` on linux for example, or `%UserProfile%\temp\` on Windows. Set the value to overwrite it if the default folder happens to be read-only.                                                                 |   |
 
 ## Sets the logging level for Profiler
 
