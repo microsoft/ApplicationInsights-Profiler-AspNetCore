@@ -50,7 +50,7 @@ There are small tweaks needed to make it work.
 # Add reference to the latest stable version of Application Insights for ASP.NET Core.
 RUN dotnet add package Microsoft.ApplicationInsights.AspNetCore --no-restore
 # Adding reference to Microsoft.ApplicationInsights.Profiler
-RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.1.0-* --no-restore
+RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.2.0-* --no-restore
 ```
 
 As you already know, invoking `dotnet add` does nothing but update the project file. And running `COPY . ./` next will overwrite the change. To deal with it, copy everything before adding packages and do not copy it again later.

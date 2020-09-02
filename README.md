@@ -2,18 +2,18 @@
 
 ## Announcement
 
-* Profiler 2.1.0-beta5 is published. Please find the NuGet package here: [2.1.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta5).
-  * Allows overwrite for default working folder by setting `LocalCacheFolder`. Refer to [Configuration](./Configurations.md) for details.
+* Profiler 2.2.0-beta1 is published. Please find the NuGet package here: [2.2.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta1).
+  * Fixed profiler failing for deploy to Azure WebSite on Windows due to permissions to fetch performance counters (#93).
+  * Switch to new API to control profiling start/stop.
 
 ## Previous announcements
 
-* Profiler 2.1.0-beta4 is published. Please find the NuGet package here: [2.1.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta4).
-
-* Profiler 2.1.0-beta2 is **NOT** recommended. There is a bug that impacts the ASP.NET Core application starting up. See bug #85 for details. Please wait for 2.1.0-beta3.
+* Profiler 2.1.0-beta5 is published. Please find the NuGet package here: [2.1.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta5).
+  * Allows overwrite for default working folder by setting `LocalCacheFolder`. Refer to [Configuration](./Configurations.md) for details.
 
 ## Description
 
-This is the project home page for `Microsoft Application Insights Profiler for ASP.NET Core`. The NuGet package can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
+This is the project home page for `Microsoft Application Insights Profiler for ASP.NET Core`. The NuGet packages can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
 
 ![Profiler Traces](./media/profiler-traces.png)
 
@@ -29,8 +29,12 @@ dotnet new webapi
 
 ```shell
 dotnet add package Microsoft.ApplicationInsights.AspNetCore
-dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.1.0-*
+dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.2.0-*
 ```
+
+_Notice: .NET Core 2.2 is **out of support**, it is recommended to migrate your project to .NET 3.1. Refer to [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) page for details. If you have to stay on .NET Core 2.2 for now, please this specific version of [`Microsoft.ApplicationInsights.AspNetCore v2.14`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.14.0) alone with the profiler package._
+
+_Tips: Find official migration documentation [here](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio)._
 
 * Enable Application Insights Profiler
 
@@ -130,8 +134,6 @@ To find out the proper version of the Profiler to use, please refer to [Support 
 ## Examples
 
 * [Enable Service Profiler for containerized ASP.NET Core application (.NET Core 3.x)](./examples/QuickStart3_0/Readme.md).
-
-* [Enable Service Profiler for containerized ASP.NET Core application (.NET Core 2.x)](./examples/EnableServiceProfilerCLR2_1/README.md).
 
 * [Enable Service Profiler for ASP.NET Core application in Visual Studio](./examples/EnableServiceProfilerInVSCLR2_1).
 
