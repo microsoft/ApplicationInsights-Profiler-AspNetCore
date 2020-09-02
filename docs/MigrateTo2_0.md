@@ -7,13 +7,13 @@ There are break changes between 1.x and 2.0 for Application Insights Profiler bu
 * To use .NET Core CLI:
 
 ```shell
-dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore --version 2.1.0-*
+dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore --version 2.2.0-*
 ```
 
 * To use package manager:
 
 ```shell
-Install-Package Microsoft.ApplicationInsights.Profiler.AspNetCore -Version 1.1.7-*
+Install-Package Microsoft.ApplicationInsights.Profiler.AspNetCore -Version 2.2.0-*
 ```
 
 ## Update the configurations

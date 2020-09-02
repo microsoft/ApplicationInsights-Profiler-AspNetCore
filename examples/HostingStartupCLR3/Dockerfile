@@ -6,7 +6,7 @@ COPY . ./
 
 # Add additional nuget packages
 RUN dotnet add package Microsoft.ApplicationInsights.AspNetCore --no-restore
-RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.1.0-* --no-restore
+RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.2.0-* --no-restore
 
 # Restore
 RUN dotnet restore
