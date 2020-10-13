@@ -109,7 +109,7 @@ At the beginning of the application, **OneTimeSchedulingPolicy** will immediatel
 https://localhost:5001/weatherforecast
 ```
 
-* Analyze the trace form Azure Portal
+* Analyze the trace from Azure Portal
 
 Get a coffee and wait for a couple of minutes - the backend needs some time, usually a 2 minutes, to ingest the data.
 
