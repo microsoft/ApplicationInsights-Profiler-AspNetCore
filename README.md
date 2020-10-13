@@ -2,14 +2,15 @@
 
 ## Announcement
 
-* Profiler 2.2.0-beta1 is published. Please find the NuGet package here: [2.2.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta1).
-  * Fixed profiler failing for deploy to Azure WebSite on Windows due to permissions to fetch performance counters (#93).
-  * Switch to new API to control profiling start/stop.
+* Profiler 2.2.0-beta2 is published. Please find the NuGet package here: [2.2.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta2).
+  * Fix the bug that blocks the Profiler to work with Microsoft.ApplicationInsights.AspNetCore 2.15.
+  * Some other small bug fixes.
 
 ## Previous announcements
 
-* Profiler 2.1.0-beta5 is published. Please find the NuGet package here: [2.1.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.1.0-beta5).
-  * Allows overwrite for default working folder by setting `LocalCacheFolder`. Refer to [Configuration](./Configurations.md) for details.
+* Profiler 2.2.0-beta1 is published. Please find the NuGet package here: [2.2.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta1).
+  * Fixed profiler failing for deploy to Azure WebSite on Windows due to permissions to fetch performance counters (#93).
+  * Switch to new API to control profiling start/stop.
 
 ## Description
 
