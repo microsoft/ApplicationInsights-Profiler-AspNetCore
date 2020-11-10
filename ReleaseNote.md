@@ -1,5 +1,10 @@
 # Release Note
 
+## 2.2.0-beta3
+* NuGet package: [2.2.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta3).
+  * Supports .NET 5.
+  * Some other small bug fixes. Checkout [the milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/8?closed=1) for details.
+
 ## 2.2.0-beta2
 
 * NuGet package: [2.2.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta2).
