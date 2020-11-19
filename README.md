@@ -2,8 +2,11 @@
 
 ## Announcement
 
+* Profiler 2.2.0-beta4 is published. Find the NuGet package here: [2.2.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta4).
+  * A memory leak and a reliability issue fixed. Recommended for upgrading.
+
 * Profiler 2.2.0-beta3 is published. Find the NuGet package here: [2.2.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta3).
-  * .NET 5 support is here. Compatbility test bar has been lifted for [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0). Feel free to test the profiler on .NET 5 and file issues.
+  * .NET 5 support is here. Compatibility test bar has been lifted for [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0). Feel free to test the profiler on .NET 5 and file issues.
 
 ## Previous announcements
 
@@ -123,7 +126,7 @@ _Tip: Click on the trace to open the trace analyzer._
 * [Configurations for the Profiler](./Configurations.md) - describes how to customize various settings of the profiler.
 * [Dockerize an application with Profiler](./examples/QuickStart3_0/Readme2.md)
 * [Profiler Sessions](./ProfilerSessions.md) - describes when the profiler starts, stops and what is traced.
-* [Trace Analysis](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-overview?toc=/azure/azure-monitor/toc.json#view-profiler-data) - introduce the trace analysis.
+* [Trace Analysis](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-overview?toc=/azure/azure-monitor/toc.json#view-profiler-data) - introduce the trace analysis, get a basic understanding of `AWAIT TIME`, `Blocked time`, `Unmanaged Async`, etc.
 * [Diagnosing a WebAPI experiencing intermittent high CPU using the Application Insights Profiler](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/TriggerProfiler.md).
 * [The call tree filter](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/CallTreeFilter.md).
 
