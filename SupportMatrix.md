@@ -2,7 +2,7 @@
 
 ## Quick choose
 
-Which version of the Profiler to use largely rely on which .NET Core runtime is used. Choose the version to use accordingly:
+Which version of the Profiler to use largely rely on which .NET Core runtime is used. Choose the version accordingly:
 
 * .NET 5: [Latest](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore).
 
