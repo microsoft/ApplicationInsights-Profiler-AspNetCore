@@ -25,11 +25,11 @@ Reference [HomeController.cs](./Controllers/HomeController.cs) for full code.
 ## Pull the latest ASP.NET Core build/runtime images
 
 ```shell
-docker pull mcr.microsoft.com/dotnet/core/sdk:2.2
-docker pull mcr.microsoft.com/dotnet/core/aspnet:2.2
+docker pull mcr.microsoft.com/dotnet/sdk:3.1
+docker pull mcr.microsoft.com/dotnet/aspnet:3.1
 ```
 
-_Tips: find the official images for [sdk](https://hub.docker.com/_/microsoft-dotnet-core-sdk) and [runtime](https://hub.docker.com/_/microsoft-dotnet-core-aspnet)._
+_Tips: find the official images for [sdk](https://hub.docker.com/_/microsoft-dotnet-sdk) and [runtime](https://hub.docker.com/_/microsoft-dotnet-aspnet)._
 
 ## Create a Dockerfile for the application
 
