@@ -4,7 +4,7 @@
 
 There are several ways to customize the [profiler session life cycle](./ProfilerSessions.md) and other aspects of the profiler. Here's some common ways.
 
-Generally, all Profiler sessions stays in the section of `ServiceProfiler`. The following settings will all short the session duration to 30 seconds, and it will also set the interval between sessions to 10 minutes.
+Generally, all Profiler settings stay in the section of `ServiceProfiler`. The following settings will shorten the session duration to 30 seconds:
 
 ### Using `appsettings.json`
 
@@ -12,7 +12,6 @@ Generally, all Profiler sessions stays in the section of `ServiceProfiler`. The 
 {
   "ServiceProfiler": {
     "Duration": "00:00:30",
-    "Interval": "00:10:00"
     // ...
   }
 }
@@ -22,7 +21,6 @@ Generally, all Profiler sessions stays in the section of `ServiceProfiler`. The 
 
 ```bash
 export ServiceProfiler__Duration="00:00:30"
-export ServiceProfiler__Interval="00:10:00"
 ```
 
 _Notice that `__` (2 underscores) are used to separate sections._
@@ -37,10 +35,9 @@ public void ConfigureServices(IServiceCollection services)
     services.AddServiceProfiler(options =>
     {
         options.Duration = TimeSpan.FromSeconds(30);
-        options.Duration = TimeSpan.FromMinutes(10);
         // ... more options.
     });
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+    ...
 }
 ```
 
@@ -98,7 +95,6 @@ Here's a complete example of `appsettings.json`:
   "ServiceProfiler": {
     "IsDisabled": false,
     "Duration": "00:00:30",
-    "Interval": "00:10:00",
     "InitialDelay": "00:00:03",
     "ProvideAnonymousTelemetry": true,
     "IsSkipCompatibilityTest": false
