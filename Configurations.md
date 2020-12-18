@@ -2,7 +2,7 @@
 
 ## Ways of settings
 
-There are several ways to customize the [profiler session life cycle](./ProfilerSessions.md) and other aspects of the profiler. Here's some common ways.
+There are several ways to customize the [profiler session life cycle](./ProfilerSessions.md) and other aspects of the profiler.
 
 Generally, all Profiler settings stay in the section of `ServiceProfiler`. The following settings will shorten the session duration to 30 seconds:
 
