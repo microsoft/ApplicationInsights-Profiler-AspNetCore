@@ -2,17 +2,14 @@
 
 ## Announcement
 
-* Profiler 2.2.0-beta4 is published. Find the NuGet package here: [2.2.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta4).
-  * A memory leak and a reliability issue fixed. Recommended for upgrading.
+* Profiler 2.2.0-beta5 is published. Find the NuGet package here: [2.0.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta5)
+  * Release the Uploader for .NET 5.0 applications. Recommend upgrade for .NET 5 applications.
+  * Find out update details in the [milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/11?closed=1).
 
 ## Previous announcements
 
-* Profiler 2.2.0-beta3 is published. Find the NuGet package here: [2.2.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta3).
-  * .NET 5 support is here. Compatibility test bar has been lifted for [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0). Feel free to test the profiler on .NET 5 and file issues.
-
-* Profiler 2.2.0-beta2 is published. Please find the NuGet package here: [2.2.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta2).
-  * Fix the bug that blocks the Profiler to work with Microsoft.ApplicationInsights.AspNetCore 2.15.
-  * Some other small bug fixes.
+* Profiler 2.2.0-beta4 is published. Find the NuGet package here: [2.2.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta4).
+  * A memory leak and a reliability issue fixed. Recommended for upgrading.
 
 ## Description
 

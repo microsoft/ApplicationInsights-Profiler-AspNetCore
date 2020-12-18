@@ -4,9 +4,10 @@
 
 Which version of the Profiler to use largely rely on which .NET Core runtime is used. Choose the version accordingly:
 
-* .NET 5: [Latest](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore).
+* .NET 5: [Latest](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore) (_Notes: 2.2.0-beta5 or above is recommended._)
 
 * .NET Core 3.1: [Latest](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore)
+
 * .NET Core 2.1: [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2)
   * .NET Core 2.1 is when the profiler initially built and there's a level of unstable there. Upgrade to .NET Core 3.1 is recommended.
 
@@ -19,6 +20,7 @@ The profiling technology is based on .NET Core runtime. We do not support applic
 
 | Application Insights Profiler                                                                               | Windows (Experimental support)                                        | Linux                       |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|-----------------------------|
+| [2.2.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta5) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5   |
 | [2.2.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta4) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5   |
 | [2.2.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta3) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5   |
 | [2.2.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta2) | .NET Core App 3.1                                                     | .NET Core App 3.1           |

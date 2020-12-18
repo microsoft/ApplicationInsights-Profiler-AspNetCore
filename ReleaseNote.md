@@ -1,5 +1,11 @@
 # Release Note
 
+## 2.2.0-beta5
+
+* Find the NuGet package here: [2.0.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta5)
+  * Release the Uploader for .NET 5.0 applications. Recommend upgrade for .NET 5 applications.
+  * Find out update details in the [milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/11?closed=1).
+
 ## 2.2.0-beta4
 
 * NuGet package: [2.2.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta4).
