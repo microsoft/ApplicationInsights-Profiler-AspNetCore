@@ -1,8 +1,13 @@
 # Release Note
 
+## 2.2.0-beta6
+
+* Find the NuGet package here: [2.2.0-beta6](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta6).
+  * Fix the issue of Uploader not exit in the 2.2.0-beta5. Details: [#124](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/124).
+
 ## 2.2.0-beta5
 
-* Find the NuGet package here: [2.0.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta5)
+* Find the NuGet package here: 2.0.0-beta5
   * Release the Uploader for .NET 5.0 applications. Recommend upgrade for .NET 5 applications.
   * Find out update details in the [milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/11?closed=1).
 
