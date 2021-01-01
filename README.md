@@ -2,7 +2,8 @@
 
 ## Announcement
 
-* Profiler 2.2.0-beta5 is published. Find the NuGet package here: [2.0.0-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta5)
+* Please SKIP 2.2.0-beta5. The uploader within the package won't exit. Details in #124. The issue will be fixed in the next release.
+* ~~Profiler 2.2.0-beta5 is published. Find the NuGet package here: 2.0.0-beta5.~~
   * Release the Uploader for .NET 5.0 applications. Recommend upgrade for .NET 5 applications.
   * Find out update details in the [milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/11?closed=1).
 
