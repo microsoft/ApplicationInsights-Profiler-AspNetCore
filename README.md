@@ -3,7 +3,7 @@
 ## Announcement
 
 * Profiler 2.2.0-beta7 is published. Find the NuGet package here: [2.2.0-beta7](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta7).
-  * Remove the logging from the Uplaoder by default. [#128](Application is starting and shutting down messages written when using profiler).
+  * Remove the logging from the Uplaoder by default. ([#128 Application is starting and shutting down messages written when using profiler](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/128)).
   * Some other small fixes.
 
 ## Previous announcements
