@@ -2,11 +2,13 @@
 
 ## Announcement
 
+* It is official! We are out of beta! Profiler 2.2.0 is published. Find the NuGet package: [2.2.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0)
+
+## Previous announcements
+
 * Profiler 2.2.0-beta7 is published. Find the NuGet package here: [2.2.0-beta7](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta7).
   * Remove the logging from the Uplaoder by default. ([#128 Application is starting and shutting down messages written when using profiler](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/128)).
   * Some other small fixes.
-
-## Previous announcements
 
 * Profiler 2.2.0-beta6 is published. Find the NuGet package here: [2.2.0-beta6](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta6).
   * Fix the issue of Uploader not exit in the last release. Details: [#124](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/124).

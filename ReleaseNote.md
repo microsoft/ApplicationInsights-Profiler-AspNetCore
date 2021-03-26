@@ -1,5 +1,10 @@
 # Release Note
 
+## 2.2.0
+
+* Find the NuGet package: [2.2.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0).
+  * We are officially out of beta.
+
 ## 2.2.0-beta7
 
 * Find the NuGet package here: [2.2.0-beta7](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta7).
