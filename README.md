@@ -39,7 +39,7 @@ dotnet new webapi
 
 ```shell
 dotnet add package Microsoft.ApplicationInsights.AspNetCore
-dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 2.2.0-*
+dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
 ```
 
 _Notice: .NET Core 2.2 is **out of support**, it is recommended to migrate your project to .NET 3.1. Refer to [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) page for details. If you have to stay on .NET Core 2.2 for now, please this specific version of [`Microsoft.ApplicationInsights.AspNetCore v2.14`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.14.0) alone with the profiler package._
@@ -70,7 +70,7 @@ To make it real, make use the following code to add some delay in the [WeatherFo
 ```csharp
 using System.Threading;
 ...
-private void SimulateDelay()
+private static void SimulateDelay()
 {
     // Delay for 200ms to 5s to simulate a bottleneck.
     Thread.Sleep((new Random()).Next(200, 5000));
@@ -103,6 +103,8 @@ In [appsettings.Development.json](examples/QuickStart3_0/appsettings.Development
     ...
 }
 ```
+
+* Alternatively, use a connection string like in [QuickStart3.1 example](./examples/QuickStart3_1/appsettings.Development.json).
 
 * Run the WebAPI, generate traffic for profiling
 
