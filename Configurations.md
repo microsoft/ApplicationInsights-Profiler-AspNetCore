@@ -75,7 +75,7 @@ To do that, in `appsettings.json`:
   "Logging": {
     "LogLevel": {
       "Default": "Warning",
-      "ServiceProfiler": "Debug"
+      "Microsoft.ApplicationInsights.Profiler": "Debug"
     }
   }
 }
@@ -88,7 +88,7 @@ Here's a complete example of `appsettings.json`:
   "Logging": {
     "LogLevel": {
       "Default": "Warning",
-      "ServiceProfiler": "Debug"
+      "Microsoft.ApplicationInsights.Profiler": "Debug"
     }
   },
   "AllowedHosts": "*",
