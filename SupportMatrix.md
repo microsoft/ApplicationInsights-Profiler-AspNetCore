@@ -20,6 +20,7 @@ The profiling technology is based on .NET Core runtime. We do not support applic
 
 | Application Insights Profiler                                                                               | Windows (Experimental support)                                        | Linux                       |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|-----------------------------|
+| [2.2.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0)             | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5   |
 | [2.2.0-beta7](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta7) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5   |
 | [2.2.0-beta6](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta6) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5   |
 | 2.2.0-beta5                                                                                                 | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5   |
