@@ -2,16 +2,20 @@
 
 ## Announcement
 
-* Profiler 2.3.0 is published. Find the NuGet package: [2.3.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.0).
-  * Applicaiton Insights AAD Authentication support with [Microsoft.ApplicationInsights.AspNetCore 2.18.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.18.0).
-  * Performance improvements in the uploader.
+* Profiler [2.3.1-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta3) is released for testing with .NET 6.
+  * New uploader that works on .NET Core 3.1, .NET 5 & .NET 6.
+  * Clean up package dependencies.
 
 ## Previous announcements
+
+* Profiler 2.3.0 is published. Find the NuGet package: [2.3.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.0).
+  * Application Insights AAD Authentication support with [Microsoft.ApplicationInsights.AspNetCore 2.18.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.18.0).
+  * Performance improvements in the uploader.
 
 * It is official! We are out of beta! Profiler 2.2.0 is published. Find the NuGet package: [2.2.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0)
 
 * Profiler 2.2.0-beta7 is published. Find the NuGet package here: [2.2.0-beta7](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta7).
-  * Remove the logging from the Uplaoder by default. ([#128 Application is starting and shutting down messages written when using profiler](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/128)).
+  * Remove the logging from the Uploader by default. ([#128 Application is starting and shutting down messages written when using profiler](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/128)).
   * Some other small fixes.
 
 * Profiler 2.2.0-beta6 is published. Find the NuGet package here: [2.2.0-beta6](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta6).
