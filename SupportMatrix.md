@@ -8,7 +8,7 @@ Which version of the Profiler to use largely rely on which .NET Core runtime is 
 
 * .NET Core 3.1: [Latest Stable](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore)
 
-* .NET 5: [Latest Stable](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore) (_Notes: 2.2.0-beta5 or above is recommended._) (Please migrate to .NET 6 ASAP, end of support on May 08, 2022).
+* .NET 5: [Latest Stable](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore) (Please consider migrate to .NET 6, .NET 5 will be end of support on May 08, 2022).
 
 ## Deprecated
 
