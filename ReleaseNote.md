@@ -1,60 +1,73 @@
-# Release Note
+# Release Note [Deprecated]
 
-## 2.2.0
+**We are deprecating this page.** All the information here is either covered by the [milestones](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestones?state=closed) or implied by the semantic versions.
+
+If you are deciding which version to use for your application, check out the [Support Matrix](./SupportMatrix.md) page.
+
+## Stable
+
+### 2.2.0
 
 * Find the NuGet package: [2.2.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0).
   * We are officially out of beta.
 
-## 2.2.0-beta7
+## Previews
+
+### 2.3.0-beta3
+
+* Find the NuGet package: [2.3.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.0-beta3).
+  * Find out update details in the [milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/13).
+
+### 2.2.0-beta7
 
 * Find the NuGet package here: [2.2.0-beta7](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta7).
   * Find out update details in the [milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/12?closed=1).
 
-## 2.2.0-beta6
+### 2.2.0-beta6
 
 * Find the NuGet package here: [2.2.0-beta6](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta6).
   * Fix the issue of Uploader not exit in the 2.2.0-beta5. Details: [#124](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/124).
 
-## 2.2.0-beta5
+### 2.2.0-beta5
 
 * Find the NuGet package here: 2.0.0-beta5
   * Release the Uploader for .NET 5.0 applications. Recommend upgrade for .NET 5 applications.
   * Find out update details in the [milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/11?closed=1).
 
-## 2.2.0-beta4
+### 2.2.0-beta4
 
 * NuGet package: [2.2.0-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta4).
   * Fixed a memory leak and some reliability issues.
   * Checkout [the milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/9?closed=1) for details.
 
-## 2.2.0-beta3
+### 2.2.0-beta3
 
 * NuGet package: [2.2.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta3).
   * Supports .NET 5.
   * Some other small bug fixes. Checkout [the milestone](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/8?closed=1) for details.
 
-## 2.2.0-beta2
+### 2.2.0-beta2
 
 * NuGet package: [2.2.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta2).
   * Fix the bug that blocks the Profiler to work with Microsoft.ApplicationInsights.AspNetCore 2.15.
   * Some other small bug fixes.
 
-## 2.2.0-beta1
+### 2.2.0-beta1
 
 * NuGet package: [2.2.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.2.0-beta1).
   * Fixed profiler failing for deploy to Azure WebSite on Windows due to permissions to fetch performance counters (#93).
   * Switch to new API to control profiling start/stop.
 
-## v1.0.0-beta1
+### v1.0.0-beta1
 
 Profiling the application and the services and monitoring the performance by using Application Insights Profiler. Beta1 is now available for testing on ASP.NET Core 2.0 Web Apps hosted in the Linux on Microsoft Azure App Services. Follow the `Get Started Guide [Coming soon]`, [Get the packages now](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.0.0-beta1) and start your performance improvement adventures!
 
-### Features
+#### Features
 
 * Profiling the performance of the ASP.NET Core 2.0 Web Application on Linux.
 * Trace/calling tree analysis.
 
-### Known issues
+#### Known issues
 
 * Enable button in Profiler Configuration pane does not work
 
