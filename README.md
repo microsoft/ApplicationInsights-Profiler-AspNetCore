@@ -2,11 +2,14 @@
 
 ## Announcement
 
+* Profiler [2.3.1-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta4) is released.
+  * Bug fixes. Click [here](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/16?closed=1) for details.
+
+## Previous announcements
+
 * Profiler [2.3.1-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta3) is released for testing with .NET 6.
   * New uploader that works on .NET Core 3.1, .NET 5 & .NET 6.
   * Clean up package dependencies.
-
-## Previous announcements
 
 * Profiler 2.3.0 is published. Find the NuGet package: [2.3.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.0).
   * Application Insights AAD Authentication support with [Microsoft.ApplicationInsights.AspNetCore 2.18.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.18.0).
