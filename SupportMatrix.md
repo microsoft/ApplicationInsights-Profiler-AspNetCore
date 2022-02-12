@@ -4,7 +4,7 @@
 
 Which version of the Profiler to use largely rely on which .NET Core runtime is used. Choose the version accordingly:
 
-* .NET 6: [2.3.1-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta3) or newer.
+* .NET 6: [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1) or newer.
 
 * .NET Core 3.1: [Latest Stable](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore)
 
@@ -26,6 +26,9 @@ The profiling technology is based on .NET Core runtime. We do not support applic
 
 | Application Insights Profiler                                                                               | Windows (Experimental support)                                        | Linux                                  |
 | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------- |
+| [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1)             | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6      |
+| [2.3.1-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta5) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6 Beta |
+| [2.3.1-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta4) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6 Beta |
 | [2.3.1-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta3) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6 Beta |
 | [2.3.1-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta2) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6 Beta |
 | [2.3.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.0)             | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5              |

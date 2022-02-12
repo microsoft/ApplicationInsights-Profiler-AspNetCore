@@ -2,17 +2,19 @@
 
 ## Announcement
 
-* Profiler [2.3.1-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta5) is released.
-  * Bug fixes. Click [here](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/14?closed=1) for details.
+* Profiler [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1) is released.
+  * Highlights:
+    * First stable version runs on .NET 6: some edge cases covered by betas. Thank you all for early adoption and the bug reports.
+    * Smaller package - Compare to 2.3.0, down to around 7M from 12M, thanks to the unified uploader across all .NET runtime versions.
+    * Bump up Microsoft.Extensions packages to 3.1.22 for security.
 
 ## Previous announcements
 
+* Profiler [2.3.1-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta5) is released.
+  * Bug fixes. Click [here](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/14?closed=1) for details.
+
 * Profiler [2.3.1-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta4) is released.
   * Bug fixes. Click [here](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/milestone/16?closed=1) for details.
-
-* Profiler [2.3.1-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta3) is released for testing with .NET 6.
-  * New uploader that works on .NET Core 3.1, .NET 5 & .NET 6.
-  * Clean up package dependencies.
 
 ## Description
 
@@ -35,7 +37,7 @@ dotnet add package Microsoft.ApplicationInsights.AspNetCore
 dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
 ```
 
-_Notice: .NET Core 2.2 is **out of support**, it is recommended to migrate your project to .NET 3.1. Refer to [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) page for details. If you have to stay on .NET Core 2.2 for now, please this specific version of [`Microsoft.ApplicationInsights.AspNetCore v2.14`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.14.0) alone with the profiler package._
+_Notice: .NET Core 2.2 is **out of support**, it is recommended to migrate your project to .NET Core 3.1/6.0. Refer to [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) page for details. If you have to stay on .NET Core 2.2 for now, please this specific version of [`Microsoft.ApplicationInsights.AspNetCore v2.14`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.14.0) alone with the profiler package._
 
 _Tips: Find official migration documentation [here](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio)._
 
