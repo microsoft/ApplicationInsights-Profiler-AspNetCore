@@ -144,7 +144,7 @@ Move on to dockerize the application once build succeeded.
 ## Related topics
 
 * [Add customize configurations](../../Configurations.md) - There are lot of customization supported like profiling duration, local cache folder, upload mode, etc.
-* [Sets logging level for Profiler](../../Configurations.md##sets-the-logging-level-for-profiler) - logging is useful and important for troubleshooting.
+* [Sets logging level for Profiler](../../Configurations.md#sets-the-logging-level-for-profiler) - logging is useful and important for troubleshooting.
 
 ## Reference
 
