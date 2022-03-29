@@ -110,7 +110,7 @@ Move on to dockerize the application once build succeeded.
 
     Note: The Profiler will run for 2 minutes. That is the best chance for testing and it is important to hit the endpoint to generate some traffic for profiling during this period. If you missed the window, kill the container and run it again.
 
-1. To hit the endpoint, visit [http://localhost:8080/weatherforecast] in your browser or use curl:
+1. To hit the endpoint, visit <http://localhost:8080/weatherforecast> in your browser or use curl:
 
     ```shell
     curl http://localhost:8080/weatherforecast
