@@ -2,6 +2,11 @@
 
 ## Announcement
 
+* Profiler [2.4.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.4.0-beta1) is released.
+  * Highlights:
+    * Support getting configurations from application insights UI in Azure Portal. [Details](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/158).
+    * Remove the dependency to Newtonsoft.NET. Details by [#142](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/142) and [#163](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/163).
+
 * Profiler [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1) is released.
   * Highlights:
     * First stable version runs on .NET 6: some edge cases covered by betas. Thank you all for early adoption and the bug reports.

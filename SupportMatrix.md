@@ -26,7 +26,8 @@ The profiling technology is based on .NET Core runtime. We do not support applic
 
 | Application Insights Profiler                                                                               | Windows (Experimental support)                                        | Linux                                  |
 | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------- |
-| [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1)             | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6      |
+| [2.4.0-beta1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1)       | .NET Core App 3.1, .NET 6                                             | .NET Core App 3.1, .NET 6              |
+| [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1)             | .NET Core App 3.1, .NET 6                                             | .NET Core App 3.1, .NET 6              |
 | [2.3.1-beta5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta5) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6 Beta |
 | [2.3.1-beta4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta4) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6 Beta |
 | [2.3.1-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1-beta3) | .NET Core App 3.1, .NET 5                                             | .NET Core App 3.1, .NET 5, .NET 6 Beta |
