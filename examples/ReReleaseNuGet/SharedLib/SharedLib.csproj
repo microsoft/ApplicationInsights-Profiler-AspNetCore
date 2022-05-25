@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ProfilerExample.SharedLib</PackageId>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- This will not pass the contentFiles through -->
+    <!-- <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.*" /> -->
+    <!-- ~~ -->
+
+    <!-- This will pass contentFiles through -->
+    <!-- Default is contentfiles;analyzers;build as per: -->
+    <!-- https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets -->
+
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.20.0" />
+
+    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.*">
+      <PrivateAssets>analyzers;build</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
