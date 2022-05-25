@@ -1,5 +1,7 @@
 # Application Insights Profiler for ASP.NET Core
 
+[![Nuget](https://img.shields.io/nuget/v/Microsoft.ApplicationInsights.Profiler.AspNetCore)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/)
+
 ## Announcement
 
 * Profiler [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1) is released.
