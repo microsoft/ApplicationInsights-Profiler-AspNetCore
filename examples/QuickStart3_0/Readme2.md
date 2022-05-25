@@ -1,3 +1,5 @@
+# This example is deprecated. Please refere to the new [.NET 6 example](../EnableServiceProfilerForContainerAppNet6/Readme.md#dockerize-the-application-above).
+
 # Quick Start to build an ASP.NET Core 3.0 WebAPI with Profiler (Part II)
 
 In [the last post](./Readme.md), we walked through how to build an application with Application Insights Profiler on locally. In this post, we are going to containerize the app and get it run inside a container.
@@ -24,7 +26,7 @@ Since we already have a working project, just follow the [dockerfile example](ht
 1. Set the environment variable to provide instrumentation for release build of the application:
 
     ```dockerfile
-    ENV APPINSIGHTS_INSTRUMENTATIONKEY YOUR_APPLICATION_INSIGHTS_KE
+    ENV APPINSIGHTS_INSTRUMENTATIONKEY YOUR_APPLICATION_INSIGHTS_KEY
     ```
 
 1. Update the entry point toward the end of the file to pick up the proper assembly.
