@@ -5,11 +5,12 @@
 
 ## Announcement
 
-* Profiler [2.4.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.4.0-beta2) is released.
+* Profiler [2.4.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.4.0) is released.
   * Highlights:
+    * Remote settings on Azure Portal
     * Fix for the uploader in .NET 3. Details in [#169](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/169).
-    * (Introduced in 2.4.0-beta1) Support getting configurations from application insights UI in Azure Portal. [Details](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/158).
-    * (Introduced in 2.4.0-beta1) Remove the dependency to Newtonsoft.Json. Details in [#142](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/142) and [#163](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/163).
+    * Support getting configurations from application insights UI in Azure Portal. [Details](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/158).
+    * Remove the dependency to Newtonsoft.Json. Details in [#142](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/142) and [#163](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/163).
 
 * Profiler [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1) is released.
   * Highlights:
