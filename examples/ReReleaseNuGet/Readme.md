@@ -1,6 +1,6 @@
 # Re-releasing Profiler.ASPNetCore package
 
-It is common to have shared library in a solution. This example describes how to properly build a NuGet package of your own that carries profiler assets and could be shared across your own solution.
+It is common to have shared library in a solution. This example describes how to properly build a NuGet package of your own that carries profiler assets and could be reused across your own solution.
 
 In this example, there are 2 projects, `WebAPI` is client project, that's the project we turn profiler on. `SharedLib` will be built into a NuGet package to simulate whatever the common package your want to build, with Profiler enabled. As per the `PackageId` property in [SharedLib.csproj](./SharedLib/SharedLib.csproj), it will be built into `ProfilerExample.SharedLib.1.0.0.nupkg`.
 
@@ -12,7 +12,7 @@ ProfilerExample.SharedLib(NuGet) --> Microsoft.ApplicationInsights.Profiler.AspN
 Microsoft.ApplicationInsights.Profiler.AspNetCore(NuGet) --> [*]
 ```
 
-Here's a recommended way to enable Profiler in `ProfilerExample.SharedLib` package:
+Here's a recommendation:
 
 ## Add reference to NuGet package
 
@@ -35,6 +35,8 @@ Here's a recommended way to enable Profiler in `ProfilerExample.SharedLib` packa
         </PackageReference>
     </ItemGroup>
     ```
+    Refer to [SharedLib.csproj](./SharedLib/SharedLib.csproj) for details. The key is to setup `<PrivateAssets>analyzers;build</PrivateAssets>` to exclude the `contentFiles` from private assets.
+
     _Tips: You might want to reference `Microsoft.ApplicationInsights.AspNetCore` in your shared project as well._
 
 ## Verify it works
@@ -66,5 +68,8 @@ Here's a recommended way to enable Profiler in `ProfilerExample.SharedLib` packa
 
 1. Check that the file of `TraceUpload.zip` is included in the header project output at: `bin/Debug/net6.0/TraceUploader.zip`
 
-1. In any header project, you can follow the other instructions to enable profiler in your header project now. There is NO need to reference it again.
+1. In any header project, without reference profiler package again, you can then follow the other instructions to enable profiler.
 
+## Feedback
+
+If you have suggestions or if there is any questions, problems, please [file an issue](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues).

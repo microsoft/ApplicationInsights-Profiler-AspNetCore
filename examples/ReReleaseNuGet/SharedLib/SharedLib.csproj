@@ -9,18 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- This will not pass the contentFiles through -->
-    <!-- <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.*" /> -->
-    <!-- ~~ -->
-
-    <!-- This will pass contentFiles through -->
     <!-- Default is contentfiles;analyzers;build as per: -->
     <!-- https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets -->
-
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.20.0" />
-
     <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.*">
       <PrivateAssets>analyzers;build</PrivateAssets>
     </PackageReference>
+
+    <!-- This is not required. Decide by your scenario whether you want to carry the latest application insights for ASP.NET Core or not -->
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.20.0" />
   </ItemGroup>
 </Project>
