@@ -1,15 +1,21 @@
-# Re-releasing Profiler.ASPNetCore package
+# Properly reference Microsoft.ApplicationInsights.Profiler.AspNetCore in your NuGet package
 
-It is common to have shared library in a solution. This example describes how to properly build a NuGet package of your own that carries profiler assets and could be reused across your own solution.
+It is common to have shared libraries in a solution, some times, your own NuGet packages. This example describes how to properly build a NuGet package of your own that carries profiler and could be reused by other projects.
 
-In this example, there are 2 projects, `WebAPI` is client project, that's the project we turn profiler on. `SharedLib` will be built into a NuGet package to simulate whatever the common package your want to build, with Profiler enabled. As per the `PackageId` property in [SharedLib.csproj](./SharedLib/SharedLib.csproj), it will be built into `ProfilerExample.SharedLib.1.0.0.nupkg`.
+In this example, there are 2 projects, `WebAPI` is client project, that's the project we want to turn profiler on. `SharedLib` will be built into a NuGet package to simulate whatever the common package your want to build, with Profiler ready to go. As per the `PackageId` property in [SharedLib.csproj](./SharedLib/SharedLib.csproj), it will be built into `ProfilerExample.SharedLib.1.0.0.nupkg`.
 
 ```mermaid
 stateDiagram-v2
 [*] --> WebAPI
+[*] --> WebAPI2
 WebAPI --> ProfilerExample.SharedLib(NuGet)
+WebAPI2 --> ProfilerExample.SharedLib(NuGet)
 ProfilerExample.SharedLib(NuGet) --> Microsoft.ApplicationInsights.Profiler.AspNetCore(NuGet)
-Microsoft.ApplicationInsights.Profiler.AspNetCore(NuGet) --> [*]
+
+note left of WebAPI2: This is another project that need to turn on Profiler.
+note left of WebAPI: This is your project to reference shared NuGet package.
+note right of ProfilerExample.SharedLib(NuGet): This is the shared NuGet package built by you.
+note right of Microsoft.ApplicationInsights.Profiler.AspNetCore(NuGet): This is the Profiler package
 ```
 
 Here's a recommendation:
