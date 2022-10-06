@@ -1,16 +1,20 @@
-# Support Custom EventPipe Providers (preview)
+# Use Custom EventPipe Providers (preview)
 
 // TODO: Description
 
 ## Steps
 
-1. Apply default providers;
+1. Setup [default providers](#The-default-providers);
 1. Add the providers you want.
    1. For example: [Well-known event providers in .NET](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/well-known-event-providers)
 
-> ⚠️ Once the custom providers is provided, all the default providers will be turned off.
+> ⚠️ Once the custom providers is set, all the default providers will be turned off.
 
-> ⚠️ At this moment, profiler won't upload/show up in Azure Portal if the default providers are off. Please only **append** your providers below.
+## Limitations
+
+> ⚠️ At this moment, profiler won't upload/show up in Azure Portal if the default providers are off. Please only **append** your providers below.  
+> ⚠️ There needs to be at least 1 valid request for the trace to be correctly uploaded.  
+> 🚩 Turn on `Debug` logs for `Microsoft.ApplicationInsights.Profiler` for troubleshooting.
 
 ## The default providers
 
