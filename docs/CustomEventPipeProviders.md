@@ -26,7 +26,7 @@ https://github.com/xiaomi7732/ApplicationInsights-Profiler-AspNetCore/releases/t
 
 ## The default providers
 
-```json
+```jsonc
 {
   "ApplicationInsights": {
     // Application insights settings. for example, the connection string...
@@ -45,7 +45,7 @@ https://github.com/xiaomi7732/ApplicationInsights-Profiler-AspNetCore/releases/t
 
 To append a provider, `Microsoft-Extensions-DependencyInjection` provider for example:
 
-```json
+```jsonc
 {
   ...
   "ServiceProfiler": {
@@ -59,5 +59,67 @@ To append a provider, `Microsoft-Extensions-DependencyInjection` provider for ex
     ]
   }
   ...
+}
+```
+
+## Examples for reference
+
+* Project file, including package info:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="3.0.0-build-20221006.2" />
+    <PackageReference Include="Microsoft.Diagnostics.NETCore.Client" Version="0.2.328102" />
+  </ItemGroup>
+</Project>
+```
+
+* Local NuGet repo in NuGet.config
+
+```jsonc
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <!--To inherit the global NuGet package sources remove the <clear/> line below -->
+    <clear />
+    <add key="nuget" value="https://api.nuget.org/v3/index.json" />
+    <!--Put the NuGet packages in Pkgs-->
+    <add key="local" value="Pkgs" />
+  </packageSources>
+</configuration>
+```
+
+* Configuration file - appsettings.json
+
+```jsonc
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information",
+      "Microsoft.ApplicationInsights.Profiler": "Debug"
+    }
+  },
+  "AllowedHosts": "*",
+  "ApplicationInsights": {
+    "ConnectionString": "redacted"
+  },
+  "ServiceProfiler": {
+    "CustomEventPipeProviders": [
+      { "name": "Microsoft-Windows-DotNETRuntime", "eventLevel": "Verbose", "keywords": "0x4c14fccbd" },
+      { "name": "Microsoft-Windows-DotNETRuntimePrivate", "eventLevel": "Verbose", "keywords": "0x4002000b" },
+      { "name": "Microsoft-DotNETCore-SampleProfiler", "eventLevel": "Verbose", "keywords": "0x0" },
+      { "name": "System.Threading.Tasks.TplEventSource", "eventLevel": "Verbose", "keywords": "0xc7" },
+      { "name": "Microsoft-ApplicationInsights-DataRelay", "eventLevel": "Verbose", "keywords": "0xffffffff" }
+    ]
+  }
 }
 ```
