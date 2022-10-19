@@ -1,39 +1,23 @@
 # Use Custom EventPipe Providers (preview)
 
-// TODO: Description
+There are more than just built-in providers that the Profiler supported. With this capability, you will be able to turn on additional providers.
 
 ## Steps
 
-1. Setup [default providers](#The-default-providers);
 1. Add the providers you want.
-   1. For example: [Well-known event providers in .NET](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/well-known-event-providers)
+   1. For example, [Well-known event providers in .NET](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/well-known-event-providers)
 
-> ⚠️ Once the custom providers is set, all the default providers will be turned off.
+> ⚠️ Although it is possible to overwrite the built-in providers, it is not recommended.
 
 ## Limitations
 
-> ⚠️ At this moment, profiler won't upload/show up in Azure Portal if the default providers are off. Please only **append** your providers below.  
-> ⚠️ There needs to be at least 1 valid request for the trace to be correctly uploaded.  
+> ⚠️ You will still need to have traffic to your service for the trace to show up in Azure Portal. There needs to be at least one valid request for the trace to be correctly uploaded.
+
+> ⚠️ You will need to use `2.5.0-beta1` or above for this feature.
+
 > 🚩 Turn on `Debug` logs for `Microsoft.ApplicationInsights.Profiler` for troubleshooting.
 
-## The default providers
-
-```json
-{
-  "ApplicationInsights": {
-    // Application insights settings. for example, the connection string...
-  },
-  "ServiceProfiler": {
-    "CustomEventPipeProviders": [
-      { "name": "Microsoft-Windows-DotNETRuntime", "eventLevel": "Verbose", "keywords": "0x4c14fccbd" },
-      { "name": "Microsoft-Windows-DotNETRuntimePrivate", "eventLevel": "Verbose", "keywords": "0x4002000b" },
-      { "name": "Microsoft-DotNETCore-SampleProfiler", "eventLevel": "Verbose", "keywords": "0x0" },
-      { "name": "System.Threading.Tasks.TplEventSource", "eventLevel": "Verbose", "keywords": "0xc7" },
-      { "name": "Microsoft-ApplicationInsights-DataRelay", "eventLevel": "Verbose", "keywords": "0xffffffff" }
-    ]
-  }
-}
-```
+## Use custom EventPipe providers
 
 To append a provider, `Microsoft-Extensions-DependencyInjection` provider for example:
 
@@ -42,14 +26,21 @@ To append a provider, `Microsoft-Extensions-DependencyInjection` provider for ex
   ...
   "ServiceProfiler": {
     "CustomEventPipeProviders": [
-      { "name": "Microsoft-Windows-DotNETRuntime", "eventLevel": "Verbose", "keywords": "0x4c14fccbd" },
-      { "name": "Microsoft-Windows-DotNETRuntimePrivate", "eventLevel": "Verbose", "keywords": "0x4002000b" },
-      { "name": "Microsoft-DotNETCore-SampleProfiler", "eventLevel": "Verbose", "keywords": "0x0" },
-      { "name": "System.Threading.Tasks.TplEventSource", "eventLevel": "Verbose", "keywords": "0xc7" },
-      { "name": "Microsoft-ApplicationInsights-DataRelay", "eventLevel": "Verbose", "keywords": "0xffffffff" },
       { "name": "Microsoft-Extensions-DependencyInjection", "eventLevel": "Verbose", "keywords": "0xffffffff" }
     ]
   }
   ...
 }
 ```
+
+## The default providers
+
+You **don't** need to configure these providers. This is just FYI:
+
+| Provider Name                           | EventLevel | Keywords    |
+| --------------------------------------- | ---------- | ----------- |
+| Microsoft-Windows-DotNETRuntime         | Verbose    | 0x4c14fccbd |
+| Microsoft-Windows-DotNETRuntimePrivate  | Verbose    | 0x4002000b  |
+| Microsoft-DotNETCore-SampleProfiler     | Verbose    | 0x0         |
+| System.Threading.Tasks.TplEventSource   | Verbose    | 0xc7        |
+| Microsoft-ApplicationInsights-DataRelay | Verbose    | 0xffffffff  |
