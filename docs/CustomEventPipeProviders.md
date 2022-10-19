@@ -13,7 +13,7 @@ There are more than built-in providers. With this capability, you will be able t
 
     > ⚠️ You will still need to have traffic to your service for the trace to show up in Azure Portal. There needs to be at least one valid request for the trace to be correctly uploaded.
 
-    > ⚠️ You will need to use `2.5.0-beta1` or above for this feature.
+    > ⚠️ You will need to use [`2.5.0-beta1`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/) or above for this feature.
 
     > 🚩 Turn on `Debug` logs for `Microsoft.ApplicationInsights.Profiler` for troubleshooting.
 
