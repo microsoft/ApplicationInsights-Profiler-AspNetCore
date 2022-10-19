@@ -31,6 +31,8 @@ There are more than built-in providers. With this capability, you will be able t
     }
     ```
 
+1. Enable and run Profiler.
+
 ## The default providers
 
 You **don't** need to configure these providers. This is information for you reference:
