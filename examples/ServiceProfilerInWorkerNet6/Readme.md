@@ -13,7 +13,7 @@ These NuGet packages are needed:
 
 See [ServiceProfilerInWorkerNet6.csproj](./ServiceProfilerInWorkerNet6.csproj) for details.
 
-> ⚠️ The profiler package to support worker service `Microsoft.ApplicationInsights.Profiler.AspNetCore` is in alpha. Download the packages here (//TBD).
+> ⚠️ The profiler package to support worker service `Microsoft.ApplicationInsights.Profiler.AspNetCore` is in alpha. Download **both** packages here: <https://github.com/xiaomi7732/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.5.0-alpha3>.
 
 ## Add application insights connection string in secrets
 
