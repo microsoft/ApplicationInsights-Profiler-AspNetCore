@@ -1,6 +1,6 @@
 # Application Insights Profiler for Worker Service Example
 
-Follow this example to use `Microsoft.ApplicationInsights.Profiler.ASPNETCore` in `Worker Services` where there is no ASP.NET.
+Follow this example to use `Microsoft.ApplicationInsights.Profiler.AspNetCore` in `Worker Services`.
 
 ## Add NuGet Packages
 
@@ -8,14 +8,15 @@ These NuGet packages are needed:
 
 ```xml
 <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.21.0" />
-<PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.5.0-alpha3">
+<PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.5.0-beta3">
 ```
 
 See [ServiceProfilerInWorkerNet6.csproj](./ServiceProfilerInWorkerNet6.csproj) for details.
 
-> ⚠️ The profiler package to support worker service `Microsoft.ApplicationInsights.Profiler.AspNetCore` is in alpha. Download **both** packages here: <https://github.com/xiaomi7732/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.5.0-alpha3>.
+> ~~⚠️ The profiler package to support worker service `Microsoft.ApplicationInsights.Profiler.AspNetCore` is in alpha. Download **both** packages here: <https://github.com/xiaomi7732/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.5.0-alpha3>.~~  
+> ⚠️ [Microsoft.ApplicationInsights.Profiler.AspNetCore.2.5.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.5.0-beta3) or above is required to support the Worker Service.
 
-## Add application insights connection string in secrets
+## Add application insights connection string in the secrets
 
 In this example, `UserSecrets` is used to protect the connection string. Choose your own way to set it up.
 
@@ -103,3 +104,8 @@ info: Microsoft.ApplicationInsights.Profiler.Core.ServiceProfilerProvider[0]
       Service Profiler session finished.                                        # Profiler finished.
 ...
 ```
+
+Wait for 2 to 5 minutes for the application insights to ingest all events, and you will see the profile session in your Application Insights resource. Your application is ready to be deployed with Profiler.
+
+> ⚠️ You will need to come up with your way to setup connection string for the Production Environment. Please refer to [Connection strings
+](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sdk-connection-string) for more info.
