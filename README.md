@@ -5,15 +5,12 @@
 
 ## Announcement
 
-* Profiler [2.4.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.4.0) is released.
-  * Highlights:
-    * Fix for the uploader in .NET 3. Details in [#169](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/169).
-    * Support getting configurations from application insights UI in Azure Portal. [Details](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/158).
-    * Remove the dependency to Newtonsoft.Json. Details in [#142](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/142) and [#163](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/163).
+* Worker service support is in beta testing now.
+  * Check out [the example](./examples/ServiceProfilerInWorkerNet6/Readme.md) for package info and the instructions.
 
 ## Previous announcements
 
-* Profiler [2.4.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.4.0-beta2) is released.
+* Profiler [2.4.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.4.0) is released.
   * Highlights:
     * Fix for the uploader in .NET 3. Details in [#169](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/169).
     * Support getting configurations from application insights UI in Azure Portal. [Details](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/158).
@@ -26,6 +23,8 @@ This is the project home page for `Microsoft Application Insights Profiler for A
 ![Profiler Traces](./media/profiler-traces.png)
 
 ## Get Started
+
+> ⚠️ These are steps for the **ASP.NET Core** applications. For the **Worker Service**, refer to [this example](./examples/ServiceProfilerInWorkerNet6/Readme.md).
 
 * Create an application
 
@@ -40,7 +39,7 @@ dotnet add package Microsoft.ApplicationInsights.AspNetCore
 dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
 ```
 
-_Notice: .NET Core 2.2 is **out of support**, it is recommended to migrate your project to .NET Core 3.1/6.0. Refer to [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) page for details. If you have to stay on .NET Core 2.2 for now, please this specific version of [`Microsoft.ApplicationInsights.AspNetCore v2.14`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.14.0) alone with the profiler package._
+_Notice: .NET Core 2.2 is **out of support**, it is recommended to migrate your project to .NET 6.x. Refer to [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) page for details. If you have to stay on .NET Core 2.2 for now, please this specific version of [`Microsoft.ApplicationInsights.AspNetCore v2.14`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.14.0) alone with the profiler package._
 
 _Tips: Find official migration documentation [here](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio)._
 
@@ -146,6 +145,8 @@ To find out the proper version of the Profiler to use, please refer to [Support 
 * [Enable Service Profiler for containerized ASP.NET Core application (.NET Core 3.x)](./examples/QuickStart3_0/Readme.md).
 
 * [Enable Service Profiler for ASP.NET Core application in Visual Studio](./examples/EnableServiceProfilerInVSCLR2_1).
+
+* [Application Insights Profiler for Worker Service Example](./examples/ServiceProfilerInWorkerNet6/Readme.md).
 
 ## References
 
