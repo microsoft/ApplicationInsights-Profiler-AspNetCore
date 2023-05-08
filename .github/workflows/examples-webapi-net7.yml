@@ -17,16 +17,15 @@
 # For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
 
-name: Build and deploy ASP.Net Core app to an Azure Web App
+name: Build and deploy .NET 7 app to an Azure Web App (Linux)
 
 env:
-  AZURE_WEBAPP_NAME: your-app-name    # set this to the name of your Azure Web App
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '5'                 # set this to the .NET Core version to use
+  AZURE_WEBAPP_NAME: epprofilerlinuxnet7      # set this to the name of your Azure Web App
+  AZURE_WEBAPP_PACKAGE_PATH: '.'              # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: '7.x'                       # set this to the .NET Core version to use
+  TARGET_PROJECT: 'examples\EnableServiceProfilerNet7'
 
 on:
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -39,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up .NET Core
+      - name: Set up .NET ${{ env.DOTNET_VERSION }} SDK
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
@@ -53,16 +52,18 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ${{ env.TARGET_PROJECT }} --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ${{ env.TARGET_PROJECT }} -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+          retention-days: 1
+
 
   deploy:
     permissions:
@@ -84,5 +85,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.NET7_WEBAPI_LINUX_AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
