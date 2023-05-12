@@ -1,6 +1,10 @@
+using EnableServiceProfilerForContainerAppNet6;
+using Microsoft.ApplicationInsights.Extensibility;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<ITelemetryInitializer, RoleInstanceTelemetryInitializer>();
 builder.Services.AddApplicationInsightsTelemetry();
 builder.Services.AddServiceProfiler(profilerSettings =>
 {
