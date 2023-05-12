@@ -38,18 +38,3 @@ jobs:
         file: examples/EnableServiceProfilerForContainerAppNet6/dockerfile
         push: true
         tags: ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-
-    # Reference: https://github.com/marketplace/actions/azure-login#configure-deployment-credentials
-    - name: Log in to Azure
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    # Reference:     
-    - name: deploy Container App
-      uses: Azure/container-apps-deploy-action@v1
-      with:
-        acrName: ${{ secrets.ACR_NAME }}
-        containerAppName: ${{ env.CONTAINER_APP_NAME }}
-        resourceGroup: ${{ env.CONTAINER_APP_RESOURCE_GROUP }}
-        imageToDeploy: ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
