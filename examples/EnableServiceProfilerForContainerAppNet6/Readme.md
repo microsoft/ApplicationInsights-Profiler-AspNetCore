@@ -142,6 +142,46 @@ Move on to dockerize the application once build succeeded.
     docker rm -f testapp
     ```
 
+## Customizing the Cloud_RoleInstance for Containers in Azure App Service
+
+To better correlate the container with the host of your application when deploying directly to Azure App Service, a telemetry initializer can be introduced. This will help address the issue where the value for cloud_RoleInstance is simply the container id, which may not be easily identifiable with the host. Follow these steps:
+
+1. Create the telemetry initializer, see [RoleInstanceTelemetryInitializer](./RoleInstanceTelemetryInitializer.cs) for an example:
+
+    ```csharp
+    public class RoleInstanceTelemetryInitializer : ITelemetryInitializer
+    {
+        public void Initialize(ITelemetry telemetry)
+        {
+            string? computerName = Environment.GetEnvironmentVariable("COMPUTERNAME");
+            if (string.IsNullOrEmpty(computerName))
+            {
+                return;
+            }
+            telemetry.Context.Cloud.RoleInstance = computerName;
+        }
+    }
+    ```
+
+    Tips: 
+
+    * "COMPUTERNAME" was used as an example, you could pick any useful environment variables from Kudu:
+        ![](./images/kudu_env.png)
+
+    * With telemetry initializer, any property on the telemetry could be customized. See [here](https://learn.microsoft.com/en-us/azure/azure-monitor/app/api-filtering-sampling#addmodify-properties-itelemetryinitializer) for more details.
+    * Do not use async code or heavy logic in telemetry initializers.
+
+1. Register it at the startup of your application, see [Program.cs](./Program.cs) for an example:
+
+    ```csharp
+    // Register RoleInstanceTelemetryInitializer as an ITelemetryInitializer
+    builder.Services.AddSingleton<ITelemetryInitializer, RoleInstanceTelemetryInitializer>();
+    ```
+
+And here's how it looks like:
+
+![](./images/Profiler_MachineInstance.png)
+
 ## Related topics
 
 * [Add customize configurations](../../Configurations.md) - There are lot of customization supported like profiling duration, local cache folder, upload mode, etc.
