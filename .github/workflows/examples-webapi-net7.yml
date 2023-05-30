@@ -20,10 +20,10 @@
 name: Build and deploy .NET 7 app to an Azure Web App (Linux)
 
 env:
-  AZURE_WEBAPP_NAME: epprofilerlinuxnet7      # set this to the name of your Azure Web App
-  AZURE_WEBAPP_PACKAGE_PATH: '.'              # set this to the path to your web app project, defaults to the repository root
+  IMAGE_NAME: epprofilerlinuxnet7
   DOTNET_VERSION: '7.x'                       # set this to the .NET Core version to use
-  TARGET_PROJECT: 'examples/EnableServiceProfilerNet7/EnableServiceProfilerNet7.csproj'
+  DOCKER_CONTEXT: 'examples/EnableServiceProfilerNet7'
+  DOCKER_FILE: 'examples/EnableServiceProfilerNet7/dockerfile'
 
 on:
   workflow_dispatch:
@@ -32,58 +32,37 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  docker_build_push_acr:
+    name: 'Docker Build and Push to ACR'
     runs-on: ubuntu-latest
+    environment: production
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - uses: actions/checkout@v3
+        name: Checkout source code
 
       - name: Set up .NET ${{ env.DOTNET_VERSION }} SDK
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Set up dependency caching for faster builds
-        uses: actions/cache@v3
+      - name: 'Docker Login'
+        uses: docker/login-action@v2
         with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
-
-      - name: Build with dotnet
-        run: dotnet build ${{ env.TARGET_PROJECT }} --configuration Release
-
-      - name: dotnet publish
-        run: dotnet publish ${{ env.TARGET_PROJECT }} -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+          registry: ${{ secrets.ACR_ENDPOINT }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+     
+      - name: Build the WebAPI image and push it to ACR
+        uses: docker/build-push-action@v4
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
-          retention-days: 1
-
-
-  deploy:
-    permissions:
-      contents: none
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Development'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: .net-app
-
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.NET7_WEBAPI_LINUX_AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          context: ${{ env.DOCKER_CONTEXT }}
+          file: ${{ env.DOCKER_FILE }}
+          push: true
+          tags: ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+    
