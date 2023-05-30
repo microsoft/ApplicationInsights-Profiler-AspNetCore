@@ -27,11 +27,16 @@ env:
 
 on:
   workflow_dispatch:
+    inputs:
+      image_version:
+          description: 'Image version. 1.0.0 for example.'
+          required: true
 
 permissions:
   contents: read
 
 jobs:
+
   docker_build_push_acr:
     name: 'Docker Build and Push to ACR'
     runs-on: ubuntu-latest
@@ -64,5 +69,5 @@ jobs:
           context: ${{ env.DOCKER_BUILD_CONTEXT }}
           file: ${{ env.DOCKER_BUILD_FILE }}
           push: true
-          tags: ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          tags: ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.image_version }}
     
