@@ -17,13 +17,13 @@
 # For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
 
-name: Build and deploy .NET 7 app to an Azure Web App (Linux)
+name: Build and deploy .NET 7 app to ACR (linux)
 
 env:
   IMAGE_NAME: epprofilerlinuxnet7
   DOTNET_VERSION: '7.x'                       # set this to the .NET Core version to use
-  DOCKER_CONTEXT: 'examples/EnableServiceProfilerNet7'
-  DOCKER_FILE: 'examples/EnableServiceProfilerNet7/dockerfile'
+  DOCKER_BUILD_CONTEXT: 'examples/EnableServiceProfilerNet7'
+  DOCKER_BUILD_FILE: 'examples/EnableServiceProfilerNet7/dockerfile'
 
 on:
   workflow_dispatch:
@@ -61,8 +61,8 @@ jobs:
       - name: Build the WebAPI image and push it to ACR
         uses: docker/build-push-action@v4
         with:
-          context: ${{ env.DOCKER_CONTEXT }}
-          file: ${{ env.DOCKER_FILE }}
+          context: ${{ env.DOCKER_BUILD_CONTEXT }}
+          file: ${{ env.DOCKER_BUILD_FILE }}
           push: true
           tags: ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
     
