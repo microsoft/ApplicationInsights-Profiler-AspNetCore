@@ -1,6 +1,6 @@
 ---
 name: Trace Analysis Failure
-about: Needs help trace trace analysis failures
+about: Needs help with trace analysis failures
 title: ''
 labels: ''
 assignees: ''
