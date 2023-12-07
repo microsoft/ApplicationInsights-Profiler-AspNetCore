@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "SampleFunctionApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7237"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 34880,
+      "useSSL": false
+    }
+  }
+}
