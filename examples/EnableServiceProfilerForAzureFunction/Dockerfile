@@ -5,9 +5,7 @@ WORKDIR /home/site/wwwroot
 EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["SampleFunctionApp/SampleFunctionApp.csproj", "SampleFunctionApp/"]
-RUN dotnet restore "SampleFunctionApp/SampleFunctionApp.csproj"
+RUN dotnet restore "SampleFunctionApp.csproj"
 COPY . .
 WORKDIR "/src/SampleFunctionApp"
 RUN dotnet build "SampleFunctionApp.csproj" -c Release -o /app/build
