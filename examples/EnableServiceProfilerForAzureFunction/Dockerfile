@@ -5,7 +5,9 @@ WORKDIR /home/site/wwwroot
 EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-RUN dotnet restore "SampleFunctionApp.csproj"
+WORKDIR /src
+COPY ["EnableServiceProfilerForAzureFunction/SampleFunctionApp.csproj", "SampleFunctionApp/"]
+RUN dotnet restore "SampleFunctionApp/SampleFunctionApp.csproj"
 COPY . .
 WORKDIR "/src/SampleFunctionApp"
 RUN dotnet build "SampleFunctionApp.csproj" -c Release -o /app/build
