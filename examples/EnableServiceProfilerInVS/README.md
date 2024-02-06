@@ -82,13 +82,13 @@ Follow the wizard to configure the App Service:
 
 ```
 ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.ApplicationInsights.Profiler.AspNetCore
-APPINSIGHTS_INSTRUMENTATIONKEY=0f1b2415-9a4f-4da1-9d26-replacewithyourown
+APPLICATIONINSIGHTS_CONNECTION_STRING="InstrumentationKey=08055218-1dcc-your-own;IngestionEndpoint=someurls-from-application-insights-resource"
 ```
 It will looks like this:
 
 ![Set Environment Variables](./.media/SetEnvInPortal.png)
 
-**Note**: The setting of the Application Insights instrumentation key should be optional. However, we have a bug in Service Profiler that requires it to be available for now.
+**Note**: The setting of the Application Insights connection string should be optional. However, we have a bug in Service Profiler that requires it to be available for now.
 
 Restart your app, the Service Profiler will be turned on and gathering trace for 2 minutes. Try to generate some traffic to your app during that period. If everything is hooked up correctly, you will start to see the traces after 5 to 10 minutes just like when you see the traces in the debug session.
 

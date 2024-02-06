@@ -17,8 +17,8 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 
-# Setup environment variable for application insights instrumentation key
-ENV APPINSIGHTS_INSTRUMENTATIONKEY=#YOUR-APPINSIGHTS_INSTRUMENTATIONKEY#
+# Setup environment variable for application insights connection string
+ENV APPLICATIONINSIGHTS_CONNECTION_STRING="YOUR-APPLICATIONINSIGHTS_CONNECTION_STRING"
 
 # Setup environment variable for hosting startup assembly
 ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.ApplicationInsights.Profiler.HostingStartup30

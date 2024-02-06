@@ -13,15 +13,15 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:3.1
 
-# Create an argument to allow docker builder to passing in application insights key.
-# For example: docker build . --build-arg APPINSIGHTS_KEY=YOUR_APPLICATIONINSIGHTS_INSTRUMENTATION_KEY
-ARG APPINSIGHTS_KEY
+# Create an argument to allow docker builder to passing in application insights conneection string.
+# For example: docker build . --build-arg APPINSIGHTS_CONN=YOUR_APPLICATIONINSIGHTS_CONNECTION_STRING
+ARG APPINSIGHTS_CONN
 # Making sure the argument is set. Fail the build of the container otherwise.
-RUN test -n "$APPINSIGHTS_KEY"
+RUN test -n "$APPINSIGHTS_CONN"
 
 # Light up Application Insights and Service Profiler
-ENV APPINSIGHTS_INSTRUMENTATIONKEY $APPINSIGHTS_KEY
-ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES Microsoft.ApplicationInsights.Profiler.AspNetCore
+ENV APPLICATIONINSIGHTS_CONNECTION_STRING=$APPINSIGHTS_CONN
+ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.ApplicationInsights.Profiler.AspNetCore
 
 WORKDIR /app
 COPY --from=build-env /app/out .

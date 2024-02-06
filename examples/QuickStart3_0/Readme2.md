@@ -26,7 +26,7 @@ Since we already have a working project, just follow the [dockerfile example](ht
 1. Set the environment variable to provide instrumentation for release build of the application:
 
     ```dockerfile
-    ENV APPINSIGHTS_INSTRUMENTATIONKEY YOUR_APPLICATION_INSIGHTS_KEY
+    ENV APPLICATIONINSIGHTS_CONNECTION_STRING="YOUR_APPLICATION_INSIGHTS_CONNECTION_STRING"
     ```
 
 1. Update the entry point toward the end of the file to pick up the proper assembly.

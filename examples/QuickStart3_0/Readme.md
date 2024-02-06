@@ -7,7 +7,7 @@ Then, in the second part, we will containerized it to a Linux container.
 ## Prerequisites
 
 1. [.NET Core **SDK** 3.0.100](https://dotnet.microsoft.com/download).
-1. [An instrumentation key](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource) associated with a valid application insights resource in Azure.
+1. [A connection string](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource) associated with a valid application insights resource in Azure.
 
 ## Get started
 
@@ -69,7 +69,7 @@ public IEnumerable<WeatherForecast> Get()
 }
 ```
 
-### Setup the instrumentation key for debugging
+### Setup the connection string for debugging
 
 In [appsettings.Development.json](./appsettings.Development.json), add the following configuration:
 
@@ -77,7 +77,7 @@ In [appsettings.Development.json](./appsettings.Development.json), add the follo
 {
     ...
     "ApplicationInsights": {
-        "InstrumentationKey": "replace-with-your-instrumentation-key"
+        "ConnectionString": "replace-with-your-connection-string"
     }
     ...
 }

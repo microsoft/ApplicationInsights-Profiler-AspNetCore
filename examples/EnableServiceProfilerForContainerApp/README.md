@@ -36,14 +36,14 @@ _Tips: find the official images for [sdk](https://hub.docker.com/_/microsoft-dot
 To enable Service Profiler, NuGet package needs to be installed and proper environment variables need to be set. One way to reach the goal is adding the following lines to your [Dockerfile](./Dockerfile). In this file:
 
 * It adds the reference to the NuGet package of Service Profiler before the build of the project happens.
-* It sets the instrumentation key to Application Insights so that the application knows where to send the trace to.
+* It sets the connection string to Application Insights so that the application knows where to send the trace to.
 * It uses the hosting startup assembly for the entry point of Service Profiler.
 
 *To make your build context as small as possible add a [.dockerignore](./.dockerignore) file to your project folder.*
 
 ## Create an Application Insights resource
 
-Follow the [Create an Application Insights resource](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource). Note down the [instrumentation key](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource#copy-the-instrumentation-key).
+Follow the [Create an Application Insights resource](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource). Note down the [instrumentation connection string](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource#copy-the-instrumentation-key).
 
 ## Optionally set the log level to Information for Service Profiler
 
@@ -61,11 +61,11 @@ Just like in [appsettings.json](./appsettings.json).
 ## Build and run the Docker image
 
 ```shell
-docker build -t enable-sp-example --build-arg APPINSIGHTS_KEY=YOUR_APPLICATION_INSIGHTS_KEY .
+docker build -t enable-sp-example --build-arg APPINSIGHTS_CONN="YOUR_APPLICATION_INSIGHTS_CONNECTION_STRING" .
 docker run -p 8080:80 --name enable-sp enable-sp-example
 ```
 
-Note, replace **YOUR_APPLICATION_INSIGHTS_KEY** with the real instrumentation key from the previous step.
+Note, replace **YOUR_APPLICATION_INSIGHTS_CONNECTION_STRING** with the real connection string from the previous step.
 
 Once the container starts to run, the Service Profiler will kick in for 2 minutes.
 

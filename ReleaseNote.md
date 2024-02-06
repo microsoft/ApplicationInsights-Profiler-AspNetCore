@@ -71,7 +71,7 @@ Profiling the application and the services and monitoring the performance by usi
 
 * Enable button in Profiler Configuration pane does not work
 
-**If you host your app using App Services Linux, you do not need to enable Profiler again in the Performance pane in App Insights portal. Including NuGet package in project and setting App Insights iKey in App Settings are sufficient to enable Profiler**
+**If you host your app using App Services Linux, you do not need to enable Profiler again in the Performance pane in App Insights portal. Including NuGet package in project and setting App Insights Connection String in App Settings are sufficient to enable Profiler**
 If you follow the [App Insights Profiler for Windows](https://docs.microsoft.com/azure/application-insights/app-insights-profiler) enablement workflow to click **Enable** in the Configure Profiler pane, you will receive an error as the button will try to install the Windows version of profiler agent on Linux environment.
 We are working on resolving this issue in the enablement experience.
 

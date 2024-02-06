@@ -11,7 +11,7 @@ RUN dotnet publish -c Release -o out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
-ENV APPINSIGHTS_INSTRUMENTATIONKEY ***your-instrumentation-key***
+ENV APPLICATIONINSIGHTS_CONNECTION_STRING="***your-application-insights-connection-string***"
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "QuickStart3_0.dll"]

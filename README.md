@@ -87,7 +87,7 @@ public IEnumerable<WeatherForecast> Get()
 }
 ```
 
-* Setup the instrumentation key for debugging
+* Setup the connection string for debugging
 
 In [appsettings.Development.json](examples/QuickStart3_0/appsettings.Development.json), add the following configuration:
 
@@ -95,7 +95,7 @@ In [appsettings.Development.json](examples/QuickStart3_0/appsettings.Development
 {
     ...
     "ApplicationInsights": {
-        "InstrumentationKey": "replace-with-your-instrumentation-key"
+        "ConnectionString": "replace-with-your-connection-string"
     }
     ...
 }
