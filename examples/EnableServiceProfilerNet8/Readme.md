@@ -1,4 +1,4 @@
-# Enable Profiler for WebAPI in .NET 7
+# Enable Profiler for WebAPI in .NET 8
 
 This folder contains a live example of Profiler running in .NET 8 Minimal WebAPI.
 
