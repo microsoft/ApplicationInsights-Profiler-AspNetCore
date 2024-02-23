@@ -51,23 +51,23 @@ To enable Service Profiler, NuGet package needs to be installed and proper envir
 # Adding a reference to hosting startup package
 RUN dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore -v 1.1.7-*
 ...
-# Light up Application Insights for Kubernetes
-ENV APPINSIGHTS_INSTRUMENTATIONKEY YOUR_APPLICATION_INSIGHTS_KEY
-ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES Microsoft.ApplicationInsights.Profiler.AspNetCore
+# Light up Application Insights Profiler
+ENV APPLICATIONINSIGHTS_CONNECTION_STRING=YOUR_APPLICATION_INSIGHTS_CONNECTION_STRING
+ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.ApplicationInsights.Profiler.AspNetCore
 ...
 ```
 
 * The first line adds the reference to the NuGet package of Service Profiler before the build of the project happens.
-* The second line sets the instrumentation key to Application Insights so that the application knows where to send the trace to.
+* The second line sets the connection string to Application Insights so that the application knows where to send the trace to.
 * The third line sets the boot strapper for Service Profiler.
 
 *To make your build context as small as possible add a [.dockerignore](.dockerignore) file to your project folder.*
 
-Reference the full [Dockerfile](./Dockerfile), you will notice it is a bit different. The major change is that **YOUR_APPLICATION_INSIGHTS_KEY** has been pulled out to become an argument - the main consideration is for the code security.
+Reference the full [Dockerfile](./Dockerfile), you will notice it is a bit different. The major change is that **YOUR_APPLICATION_INSIGHTS_CONNECTION_STRING** has been pulled out to become an argument - the main consideration is for the code security.
 
 ## Create an Application Insights resource
 
-Follow the [Create an Application Insights resource](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource). Note down the [instrumentation key](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource#copy-the-instrumentation-key).
+Follow the [Create an Application Insights resource](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource). Note down the [connection string](https://learn.microsoft.com/en-us/azure/azure-monitor/app/migrate-from-instrumentation-keys-to-connection-strings#migrate-from-application-insights-instrumentation-keys-to-connection-strings).
 
 ## Optionally set the log level to Information for Service Profiler
 
@@ -85,11 +85,11 @@ Just like in [appsettings.json](./appsettings.json).
 ## Build and run the Docker image
 
 ```shell
-docker build -t appinsights-profiler-example --build-arg APPINSIGHTS_KEY=YOUR_APPLICATION_INSIGHTS_KEY .
+docker build -t appinsights-profiler-example --build-arg APPINSIGHTS_CONN=YOUR_APPLICATION_INSIGHTS_CONNECTION_STRING .
 docker run -p 8080:80 --name appinsights-profiler-example appinsights-profiler-example
 ```
 
-Note, replace **YOUR_APPLICATION_INSIGHTS_KEY** with the real instrumentation key from the previous step.
+Note, replace **YOUR_APPLICATION_INSIGHTS_CONNECTION_STRING** with the real connection string from the previous step.
 
 Once the container starts to run, the Service Profiler will kick in for 2 minutes.
 

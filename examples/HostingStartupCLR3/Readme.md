@@ -5,7 +5,7 @@
 ## Pre-requisition
 
 * Basic knowledge of how to [Dockerize an ASP.NET Core application](https://docs.docker.com/engine/examples/dotnetcore/).
-* A valid application insights instrumentation key.
+* A valid application insights connection string.
 
 ## The Plan
 
@@ -60,8 +60,8 @@ That should give us a good **build image**. Refer to [Dockerfile](./Dockerfile) 
 * Then, we will need to setup 2 environment variables in the **runtime image**:
 
 ```dockerfile
-# Setup environment variable for application insights instrumentation key
-ENV APPINSIGHTS_INSTRUMENTATIONKEY=your-instrumentation-key
+# Setup environment variable for application insights connection string
+ENV APPLICATIONINSIGHTS_CONNECTION_STRING=your-applicationinsights-connection-string
 # Setup environment variable for hosting startup assembly
 ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.ApplicationInsights.Profiler.HostingStartup30
 ```
@@ -119,8 +119,8 @@ After all tweaks, the image is ready to be built. Again, refer to [Dockerfile](.
 [Deploy the images built to Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-docker) and it will run already. What special about running it in Azure is that it enables us to overwrite the environment variables. This is very useful in sense of:
 
 1. Overwrite for the environment variables set in the docker file
-    * You could set _APPINSIGHTS_INSTRUMENTATIONKEY_ in app settings and the application will honor it;
-        * I would setup 2 application insights resource. One for development only, one for production. The production instrumentation key will only be protected and set only in the Azure App service settings.
+    * You could set _APPLICATIONINSIGHTS_CONNECTION_STRING_ in app settings and the application will honor it;
+        * I would setup 2 application insights resource. One for development only, one for production. The production connection string will only be protected and set only in the Azure App service settings.
 
     * You could set _ASPNETCORE_HOSTINGSTARTUPASSEMBLIES_ to decide whether to light up Application Insights Profiler or not.
 

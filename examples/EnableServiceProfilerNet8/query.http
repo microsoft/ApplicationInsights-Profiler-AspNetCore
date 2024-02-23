@@ -1,0 +1,2 @@
+# Use this file with VSCode Rest client extension
+GET http://localhost:5234/
