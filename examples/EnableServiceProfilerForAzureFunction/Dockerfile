@@ -10,9 +10,6 @@ COPY ["EnableServiceProfilerForAzureFunction/SampleFunctionApp.csproj", "SampleF
 RUN dotnet restore "SampleFunctionApp/SampleFunctionApp.csproj"
 COPY . .
 WORKDIR "/src/SampleFunctionApp"
-RUN dotnet build "SampleFunctionApp.csproj" -c Release -o /app/build
-
-FROM build AS publish
 RUN dotnet publish "SampleFunctionApp.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
