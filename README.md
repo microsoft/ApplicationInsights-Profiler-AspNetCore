@@ -7,6 +7,8 @@
 
 * Upgrade to [2.7.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.7.0). Reduced the telemetry noise. Check out the details in the [release notes](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.7.0).
 
+* Running inside Azure Fucntion? Follow [this example](./examples/EnableServiceProfilerForAzureFunction)
+
 ## Previous announcements
 
 * Worker service support is in beta testing now.
