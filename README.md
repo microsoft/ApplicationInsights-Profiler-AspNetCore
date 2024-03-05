@@ -5,16 +5,12 @@
 
 ## Announcement
 
-* Worker service support is in beta testing now.
-  * Check out [the example](./examples/ServiceProfilerInWorkerNet6/Readme.md) for package info and the instructions.
+* Upgrade to [2.7.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.7.0). Reduced the telemetry noise. Check out the details in the [release notes](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.7.0).
 
 ## Previous announcements
 
-* Profiler [2.4.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.4.0) is released.
-  * Highlights:
-    * Fix for the uploader in .NET 3. Details in [#169](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/169).
-    * Support getting configurations from application insights UI in Azure Portal. [Details](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/158).
-    * Remove the dependency to Newtonsoft.Json. Details in [#142](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/142) and [#163](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/issues/163).
+* Worker service support is in beta testing now.
+  * Check out [the example](./examples/ServiceProfilerInWorkerNet6/Readme.md) for package info and the instructions.
 
 ## Description
 
