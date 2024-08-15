@@ -106,6 +106,8 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
     https://localhost:5001/weatherforecast
     ```
 
+## Trace Analysis
+
 1. **Analyze Traces in Azure Portal**
 
     Wait a few minutes for data ingestion. In the Azure Portal, navigate to your Application Insights resource, go to the **Performance** blade, and click `Profiler` to view profiling sessions:
@@ -113,6 +115,14 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
     ![Profiler Trace Sessions](./media/OneTimeProfilerTrace.png)
 
     _Tip: Click on a trace to open the trace analyzer._
+
+1. **Review Code Optimizations**
+
+    Once Profiler traces are available in the Azure portal for your application, they are automatically analyzed by an AI-based service known as `Code Optimizations`. This service helps detect and remediate performance bottlenecks at the code level for your running .NET applications. This analysis does not incur any additional overhead on your server or costs to your bill.
+
+    ![Code Optiizations](./media/CodeOptimizations.png)
+
+    To learn more, please refer to [Code Optimizations Documentation](https://aka.ms/CodeOptimizations/Docs).
 
 ## Next Steps
 
