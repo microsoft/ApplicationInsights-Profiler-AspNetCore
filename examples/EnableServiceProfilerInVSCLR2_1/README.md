@@ -1,5 +1,7 @@
 # Enable Service Profiler for ASP.NET Core application in Visual Studio
 
+> ⚠️ .NET Core 2.1 has reached its end of support. For information on upgrading, please visit <https://dot.net>.
+
 Enable Service Profiler for ASP.NET Core application in Visual Studio is easy. We will walk through the basic steps.
 
 ## Create the ASP.NET Core Web Application with Docker Support

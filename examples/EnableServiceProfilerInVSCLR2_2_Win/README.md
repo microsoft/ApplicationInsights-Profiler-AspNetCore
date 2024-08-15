@@ -1,5 +1,7 @@
 # Enable Application Insights Profiler for ASP.NET Core 2.2 Applications
 
+> ⚠️ .NET Core 2.2 has reached its end of support. For information on upgrading, please visit <https://dot.net>.
+
 For Application Insights Profiler 1.1.4-beta1 and above, profiling on Windows is supported as **an experimental feature** for ASP.NET Core 2.2 and above applications.
 
 This document describes how to do it in Visual Studio.
