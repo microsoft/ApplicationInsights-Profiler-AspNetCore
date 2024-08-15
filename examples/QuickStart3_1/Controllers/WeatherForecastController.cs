@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using HeavyArrayForecast;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -27,21 +24,7 @@ namespace QuickStart3_1.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            SimulateDelay();
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
-
-        private static void SimulateDelay()
-        {
-            // Delay for 500ms to 2s to simulate a bottleneck.
-            Thread.Sleep((new Random()).Next(500, 2000));
+            return WeatherForecastHelper.GetForecasts();
         }
     }
 }
