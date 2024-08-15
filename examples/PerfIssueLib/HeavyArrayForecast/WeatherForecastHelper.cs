@@ -11,7 +11,6 @@ public static class WeatherForecastHelper
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-
     public static IEnumerable<WeatherForecast> GetForecasts(int redundantIterations = 1000000)
     {
         IEnumerable<WeatherForecast> forecasts = null;
