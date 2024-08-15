@@ -120,9 +120,17 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 
     Once Profiler traces are available in the Azure portal for your application, they are automatically analyzed by an AI-based service known as `Code Optimizations`. This service helps detect and remediate performance bottlenecks at the code level for your running .NET applications. This analysis does not incur any additional overhead on your server or costs to your bill.
 
+    To review the available Code Optimizations:
+
+    1. Navigate to the **Performance** blade.
+    1. You might see the top 3 recommendations in the **Insights** card.
+    1. Alternatively, click on the **Code Optimizations** button.
+
+    _Note that it may take a few hours for Code Optimizations to appear._
+
     ![Code Optiizations](./media/CodeOptimizations.png)
 
-    To learn more, please refer to [Code Optimizations Documentation](https://aka.ms/CodeOptimizations/Docs).
+    For more information, refer to the [Code Optimizations Documentation](https://aka.ms/CodeOptimizations/Docs).
 
 ## Next Steps
 
