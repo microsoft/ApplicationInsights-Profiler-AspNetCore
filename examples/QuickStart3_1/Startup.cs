@@ -30,7 +30,7 @@ namespace QuickStart3_1
             services.AddServiceProfiler(profilerSettings =>
             {
                 // Refer to https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/blob/main/Configurations.md for more settings.
-                profilerSettings.Duration=TimeSpan.FromSeconds(60);
+                profilerSettings.Duration=TimeSpan.FromSeconds(30);
             });
         }
 
