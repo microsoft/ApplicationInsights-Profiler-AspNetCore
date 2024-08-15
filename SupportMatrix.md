@@ -4,16 +4,14 @@
 
 Which version of the Profiler to use largely rely on which .NET Core runtime is used. Choose the version accordingly:
 
-* .NET 6: [2.3.1](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.3.1) or newer.
-
-* .NET Core 3.1: [Latest Stable](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore)
-
-* .NET 5: [Latest Stable](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore) (Please consider migrate to .NET 6, .NET 5 will be end of support on May 08, 2022).
+* .NET 6 / .NET 8: The latest stable version is always recommended.
 
 ## Deprecated
 
 These are last known working versions. It is suggested to migrated to newer versions of .NET runtime.
 
+* .NET 5: [Latest Stable](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore) (Please consider migrate to .NET 6, .NET 5 will be end of support on May 08, 2022).
+* .NET Core 3.1: [Latest Stable](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore)
 * .NET Core 2.1: [1.1.7-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/1.1.7-beta2)
   * .NET Core 2.1 is when the profiler initially built and there's a level of unstable there. Upgrade to .NET Core 3.1 is recommended.
 
@@ -22,7 +20,13 @@ These are last known working versions. It is suggested to migrated to newer vers
 
 ## Details
 
-The profiling technology is based on .NET Core runtime. We do not support applications run on .NET Framework. See the table below for supported runtime.
+The profiling technology is based on .NET Core runtime. We do not support applications run on .NET Framework.
+
+As the technology matures, assume the latest package will work on supported .NET versions. Refer to <https://dot.net> for supported .NET versions.
+
+## Archived
+
+Here's some original supporting matrix:
 
 | Application Insights Profiler                                                                               | Windows (Experimental support)                                        | Linux                                  |
 | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------- |
