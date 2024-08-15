@@ -1,3 +1,4 @@
+using HeavyArrayForecast;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.DataContracts;
 
@@ -25,8 +26,8 @@ public class Worker : BackgroundService
             // These request operations will be captured by the profiler
             using (_telemetryClient.StartOperation<RequestTelemetry>("operation"))
             {
-                // Simulate some operation that takes 200 ms to finish
-                await Task.Delay(TimeSpan.FromMilliseconds(200), stoppingToken);
+                _ = WeatherForecastHelper.GetForecasts();
+                _logger.LogInformation("Wether reported.");
             }
 
             // Wait for 10 seconds, do not repeat too frequently.

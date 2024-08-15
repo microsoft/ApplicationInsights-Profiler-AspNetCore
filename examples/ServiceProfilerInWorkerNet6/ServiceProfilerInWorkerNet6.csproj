@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.5.0-beta3" />
+    <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.*" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.21.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PerfIssueLib\HeavyArrayForecast\HeavyArrayForecast.csproj" />
   </ItemGroup>
 </Project>

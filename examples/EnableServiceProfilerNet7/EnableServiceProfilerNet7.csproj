@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.ApplicationInsights.Profiler.AspNetCore" Version="2.5.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PerfIssueLib\HeavyArrayForecast\HeavyArrayForecast.csproj" />
+  </ItemGroup>
+
 </Project>

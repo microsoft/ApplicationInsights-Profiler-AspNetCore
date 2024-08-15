@@ -1,5 +1,7 @@
 # Quick Start to build an ASP.NET Core 3.0 WebAPI with Profiler (Part I)
 
+> ⚠️ .NET Core 3.x has reached its end of support. For information on upgrading, please visit <https://dot.net>.
+
 In this example, we will walk through the steps to build an ASP.NET Core 3.0 WebAPI with Application Insights Profiler enabled and run on Windows. The same steps work for .NET Core 2.2 application too.
 
 Then, in the second part, we will containerized it to a Linux container.

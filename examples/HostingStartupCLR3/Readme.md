@@ -1,5 +1,7 @@
 # Zero code to enable Application Insights Profiler for ASP.NET 3.x application in a container
 
+> ⚠️ .NET Core 3.x has reached its end of support. For information on upgrading, please visit <https://dot.net>.
+
 [Use hosting startup assemblies in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/platform-specific-configuration?view=aspnetcore-3.0) allows ASP.NET Core 3.x application to enhance the startup experience. Application Insights Profiler makes use hosting startup to **enable zero code activation**. Here's how.
 
 ## Pre-requisition

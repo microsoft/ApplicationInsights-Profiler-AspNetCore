@@ -1,5 +1,7 @@
 # Quick Start (.NET Core 3.1 WebAPI)
 
+> ⚠️ .NET Core 3.x has reached its end of support. For information on upgrading, please visit <https://dot.net>.
+
 ## Build the solution
 
 Refer to the same steps to build a [WebAPI for .NET 3.0](../QuickStart3_0/Readme.md).
