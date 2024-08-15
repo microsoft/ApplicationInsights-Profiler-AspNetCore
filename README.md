@@ -16,7 +16,7 @@
 
 ## Description
 
-This is the project home page for `Microsoft Application Insights Profiler for ASP.NET Core`. The NuGet packages can be found [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
+Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET Core`. You can find the NuGet packages [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
 
 ![Profiler Traces](./media/profiler-traces.png)
 
@@ -26,23 +26,24 @@ This is the project home page for `Microsoft Application Insights Profiler for A
 
 1. **Create a New Application**
 
+    For example:
+
     ```shell
     dotnet new webapi
     ```
 
-2. **Add NuGet Packages**
+1. **Add NuGet Packages**
 
     ```shell
     dotnet add package Microsoft.ApplicationInsights.AspNetCore
     dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
     ```
 
-3. **Enable Application Insights Profiler**
+1. **Enable Application Insights Profiler**
 
     Modify [Startup.cs](./examples/QuickStart3_0/Startup.cs) or [Program.cs](./examples/EnableServiceProfilerNet8/Program.cs) to include:
 
     ```csharp
-    // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
         ...
@@ -52,9 +53,9 @@ This is the project home page for `Microsoft Application Insights Profiler for A
     }
     ```
 
-4. **Optionally, Add a Bottleneck**
+1. **Optionally, Add a Bottleneck**
 
-    * Add a reference to `HeavyArrayForcast` in [QuickStart3_1.csproj](examples/QuickStart3_1/QuickStart3_1.csproj):
+    * Add a reference to `HeavyArrayForcast`, for example, in [QuickStart3_1.csproj](examples/QuickStart3_1/QuickStart3_1.csproj):
 
         ```xml
         <ItemGroup>
@@ -75,9 +76,9 @@ This is the project home page for `Microsoft Application Insights Profiler for A
         }
         ```
 
-    _Note: Check [WeatherForecastHelper.cs](examples/PerfIssueLib/HeavyArrayForecast/WeatherForecastHelper.cs) for details on the issue._
+    _Note: Check [WeatherForecastHelper.cs](examples/PerfIssueLib/HeavyArrayForecast/WeatherForecastHelper.cs) for details on the issue. If you prefer not to use project-to-project references, you can copy the code from this file directly into your project._
 
-5. **Set Up Connection String**:
+1. **Set Up Connection String**:
 
     In [appsettings.Development.json](examples/QuickStart3_1/appsettings.Development.json), add:
 
@@ -91,7 +92,7 @@ This is the project home page for `Microsoft Application Insights Profiler for A
     }
     ```
 
-6. **Run and Profile the Application**
+1. **Run and Profile the Application**
 
     Start your application:
 
@@ -105,7 +106,7 @@ This is the project home page for `Microsoft Application Insights Profiler for A
     https://localhost:5001/weatherforecast
     ```
 
-7. **Analyze Traces in Azure Portal**
+1. **Analyze Traces in Azure Portal**
 
     Wait a few minutes for data ingestion. In the Azure Portal, navigate to your Application Insights resource, go to the **Performance** blade, and click `Profiler` to view profiling sessions:
 
@@ -148,7 +149,7 @@ This is a documentation/sample repository. The [LICENSE](LICENSE) covers the con
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
+the rights to use your contribution. For details, visit <https://cla.microsoft.com>.
 
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
 a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
