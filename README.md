@@ -132,6 +132,10 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 
     For more information, refer to the [Code Optimizations Documentation](https://aka.ms/CodeOptimizations/Docs).
 
+## Troubleshoot
+
+* Unable to see profile traces? Check out our [troubleshooting guide](./docs/Troubleshoot.md).
+
 ## Next Steps
 
 * [Profiler Configurations](./Configurations.md) -  Customize profiler settings.
