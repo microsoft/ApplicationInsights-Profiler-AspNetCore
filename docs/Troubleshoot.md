@@ -2,10 +2,10 @@
 
 This article presents troubleshooting steps and information to enable you to use `Microsoft.ApplicationInsights.Profiler.AspNetCore`.
 
-## Are you connecting to the correct application insights resource
+## Are you connecting to the correct Application Insights resource
 
-* Profiler depends on the correct connection to application insights.
-  1. Check the connection string to make sure it is pointing to the correct application insights resource.
+* Profiler depends on the correct connection to Application Insights.
+  1. Check the connection string to make sure it is pointing to the correct Application Insights resource.
   1. Query `Application Insights` / `Log Analytics Workspace` to make sure there are **Request** telemetries.
 
       For example:
@@ -24,11 +24,11 @@ This article presents troubleshooting steps and information to enable you to use
       * `where cloud_RoleInstance == 'your-instance-name'` - filter for noise.
       * `limit 5` - limit the result to 5 records.
 
-      Notes: _It is possible for multiple instances to send data into the same application insights component. Filter by `Cloud_RoleInstance` accordingly._
+      Notes: _It is possible for multiple instances to send data into the same Application Insights component. Filter by `Cloud_RoleInstance` accordingly._
 
-      If there's no application insights records, make sure application insights is setup correctly. Refer to [ApplicationInsights-dotnet](https://github.com/microsoft/ApplicationInsights-dotnet) for more details.
+      If there's no Application Insights records, make sure Application Insights is setup correctly. Refer to [ApplicationInsights-dotnet](https://github.com/microsoft/ApplicationInsights-dotnet) for more details.
 
-## Are there correct Profiler related trace events in the application insights
+## Are there correct Profiler related trace events in the Application Insights
 
   1. Query trace to find out a Profiler session
 
