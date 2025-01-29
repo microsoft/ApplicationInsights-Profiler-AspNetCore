@@ -2,6 +2,11 @@
 
 This article presents troubleshooting steps and information to enable you to use `Microsoft.ApplicationInsights.Profiler.AspNetCore`.
 
+**Query tips**
+
+* Use a time range like `> ago(30m)` for recent incidents. If the incident is older, expand the time range.
+* Start with a broader range, such as `> ago(30d)`, to identify key events, then narrow it down for more specific results.
+
 ## Are you connecting to the correct Application Insights resource
 
 * Profiler depends on the correct connection to Application Insights.
