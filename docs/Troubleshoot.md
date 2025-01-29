@@ -8,6 +8,8 @@ This article presents troubleshooting steps and information to enable you to use
   1. Check the connection string to make sure it is pointing to the correct Application Insights resource.
   1. Query `Application Insights` / `Log Analytics Workspace` to make sure there are **Request** telemetries.
 
+      **Note:** _the example here uses `last 30 minutes`, expand it accordingly._
+
       For example:
 
       ```kql
