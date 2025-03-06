@@ -16,13 +16,15 @@
 
 ## Description
 
-Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET Core`. You can find the NuGet packages [here](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/).
+Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET Core`. Enable profiler, integrate seamlessly with your Application Insights resource, and unlock powerful [Code Optimizations](https://learn.microsoft.com/azure/azure-monitor/insights/code-optimizations-profiler-overview#code-optimizations) for your .NET applications.
+
+> ⭐ Not sure which `Profiler Agent` is right for you? Check out our [Profiler Agent Selection Guide](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net/blob/main/docs/ProfilerAgentSelectionGuide.md) to help you choose the best option for your needs.
 
 ![Profiler Traces](./media/profiler-traces.png)
 
 ## Getting Started
 
-> ⚠️ These instructions are for **ASP.NET Core** applications. For **Worker Services**, refer to [this example](./examples/ServiceProfilerInWorkerNet6/Readme.md).
+> ⚠️ These instructions are for **ASP.NET Core applications**. For **Worker Services**, refer to [this example](./examples/ServiceProfilerInWorkerNet6/Readme.md). If you are using **OpenTelemetry** instead of **application insights SDK**, please go to [Azure Monitor OpenTelemetry Profiler](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net).
 
 1. **Create a New Application**
 
