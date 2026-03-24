@@ -37,7 +37,7 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 1. **Add NuGet Packages**
 
     ```shell
-    dotnet add package Microsoft.ApplicationInsights.AspNetCore
+    dotnet add package Microsoft.ApplicationInsights.AspNetCore --version 2.23.0
     dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
     ```
 
