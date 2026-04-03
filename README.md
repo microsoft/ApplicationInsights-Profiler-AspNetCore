@@ -5,11 +5,13 @@
 
 ## Announcement
 
-* Upgrade to [2.7.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.7.0). Reduced the telemetry noise. Check out the details in the [release notes](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.7.0).
-
-* Running inside Azure Fucntion? Follow [this example](./examples/EnableServiceProfilerForAzureFunction).
+* [3.0.2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/3.0.2) is now available! This version supports Application Insights SDK 2.x. If you are using Application Insights 3.x (OpenTelemetry-based), please use [Azure Monitor OpenTelemetry Profiler for .NET](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net) instead.
 
 ## Previous announcements
+
+* Upgrade to [2.7.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.7.0). Reduced the telemetry noise. Check out the details in the [release notes](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.7.0).
+
+* Running inside Azure Function? Follow [this example](./examples/EnableServiceProfilerForAzureFunction).
 
 * Worker service support is in beta testing now.
   * Check out [the example](./examples/ServiceProfilerInWorkerNet6/Readme.md) for package info and the instructions.
