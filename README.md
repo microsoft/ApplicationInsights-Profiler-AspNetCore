@@ -59,7 +59,7 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 
 1. **Optionally, Add a Bottleneck**
 
-    * Add a reference to `HeavyArrayForcast`, for example, in [QuickStart3_1.csproj](examples/QuickStart3_1/QuickStart3_1.csproj):
+    * Add a reference to `HeavyArrayForecast`, for example, in [QuickStart3_1.csproj](examples/QuickStart3_1/QuickStart3_1.csproj):
 
         ```xml
         <ItemGroup>
@@ -132,7 +132,7 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 
     _Note that it may take a few hours for Code Optimizations to appear._
 
-    ![Code Optiizations](./media/CodeOptimizations.png)
+    ![Code Optimizations](./media/CodeOptimizations.png)
 
     For more information, refer to the [Code Optimizations Documentation](https://aka.ms/CodeOptimizations/Docs).
 
@@ -142,10 +142,10 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 
 ## Next Steps
 
-* [Profiler Configurations](./Configurations.md) -  Customize profiler settings.
+* [Profiler Configurations](./Configurations.md) - Customize profiler settings.
 * [Dockerize with Profiler](./examples/QuickStart3_0/Readme2.md)
 * [Profiler Sessions](./ProfilerSessions.md) - Details on profiler operations.
-* [Trace Analysis](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-overview?toc=/azure/azure-monitor/toc.json#view-profiler-data) - Learn about trace analysis. For example, what does `AWAIT TIME`, `Blocked time`, `Unmanaged Async` means, etc.
+* [Trace Analysis](https://learn.microsoft.com/en-us/azure/application-insights/app-insights-profiler-overview?toc=/azure/azure-monitor/toc.json#view-profiler-data) - Learn about trace analysis. For example, what do `AWAIT TIME`, `Blocked time`, `Unmanaged Async` mean, etc.
 * [Diagnosing High CPU Usage](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/TriggerProfiler.md).
 * [Call tree filter](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/CallTreeFilter.md).
 
@@ -165,7 +165,7 @@ Refer to the [Support Matrix](./SupportMatrix.md) to determine the appropriate p
 
 ## References
 
-* [Profile ASP.NET Core Azure Linux web apps with Application Insights Profiler](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-aspnetcore-linux)
+* [Profile ASP.NET Core Azure Linux web apps with Application Insights Profiler](https://learn.microsoft.com/en-us/azure/application-insights/app-insights-profiler-aspnetcore-linux)
 
 ## CAUTION
 
