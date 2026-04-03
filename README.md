@@ -5,7 +5,7 @@
 
 ## Announcement
 
-* [3.0.2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/3.0.2) is now available! This version supports Application Insights SDK 2.x. If you are using Application Insights 3.x (OpenTelemetry-based), please use [Azure Monitor OpenTelemetry Profiler for .NET](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net) instead.
+* [3.0.2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/3.0.2) is now available. Starting from this version, only Application Insights SDK 2.x is supported. If you are using Application Insights SDK 3.x (OpenTelemetry-based), please use [Azure Monitor OpenTelemetry Profiler for .NET](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net) instead.
 
 ## Previous announcements
 
@@ -20,7 +20,7 @@
 
 Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET Core`. Enable profiler, integrate seamlessly with your Application Insights resource, and unlock powerful [Code Optimizations](https://learn.microsoft.com/azure/azure-monitor/insights/code-optimizations-profiler-overview#code-optimizations) for your .NET applications.
 
-> ⭐ Not sure which `Profiler Agent` is right for you? Check out our [Profiler Agent Selection Guide](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net/blob/main/docs/ProfilerAgentSelectionGuide.md) to help you choose the best option for your needs.
+> ⚠️ **This package supports Application Insights SDK 2.x only.** If you are using Application Insights SDK 3.x (OpenTelemetry-based), use [Azure Monitor OpenTelemetry Profiler for .NET](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net) instead. See the [Profiler Agent Selection Guide](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net/blob/main/docs/ProfilerAgentSelectionGuide.md) for details.
 
 ![Profiler Traces](./media/profiler-traces.png)
 
