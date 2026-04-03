@@ -5,11 +5,13 @@
 
 ## Announcement
 
-* Upgrade to [2.7.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.7.0). Reduced the telemetry noise. Check out the details in the [release notes](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.7.0).
-
-* Running inside Azure Fucntion? Follow [this example](./examples/EnableServiceProfilerForAzureFunction).
+* [3.0.2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/3.0.2) is now available. Starting from this version, only Application Insights SDK 2.x is supported. If you are using Application Insights SDK 3.x (OpenTelemetry-based), please use [Azure Monitor OpenTelemetry Profiler for .NET](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net) instead.
 
 ## Previous announcements
+
+* Upgrade to [2.7.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Profiler.AspNetCore/2.7.0). Reduced the telemetry noise. Check out the details in the [release notes](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore/releases/tag/v2.7.0).
+
+* Running inside Azure Function? Follow [this example](./examples/EnableServiceProfilerForAzureFunction).
 
 * Worker service support is in beta testing now.
   * Check out [the example](./examples/ServiceProfilerInWorkerNet6/Readme.md) for package info and the instructions.
@@ -18,7 +20,7 @@
 
 Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET Core`. Enable profiler, integrate seamlessly with your Application Insights resource, and unlock powerful [Code Optimizations](https://learn.microsoft.com/azure/azure-monitor/insights/code-optimizations-profiler-overview#code-optimizations) for your .NET applications.
 
-> ⭐ Not sure which `Profiler Agent` is right for you? Check out our [Profiler Agent Selection Guide](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net/blob/main/docs/ProfilerAgentSelectionGuide.md) to help you choose the best option for your needs.
+> ⚠️ **This package supports Application Insights SDK 2.x only.** If you are using Application Insights SDK 3.x (OpenTelemetry-based), use [Azure Monitor OpenTelemetry Profiler for .NET](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net) instead. See the [Profiler Agent Selection Guide](https://github.com/Azure/azuremonitor-opentelemetry-profiler-net/blob/main/docs/ProfilerAgentSelectionGuide.md) for details.
 
 ![Profiler Traces](./media/profiler-traces.png)
 
@@ -57,7 +59,7 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 
 1. **Optionally, Add a Bottleneck**
 
-    * Add a reference to `HeavyArrayForcast`, for example, in [QuickStart3_1.csproj](examples/QuickStart3_1/QuickStart3_1.csproj):
+    * Add a reference to `HeavyArrayForecast`, for example, in [QuickStart3_1.csproj](examples/QuickStart3_1/QuickStart3_1.csproj):
 
         ```xml
         <ItemGroup>
@@ -130,7 +132,7 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 
     _Note that it may take a few hours for Code Optimizations to appear._
 
-    ![Code Optiizations](./media/CodeOptimizations.png)
+    ![Code Optimizations](./media/CodeOptimizations.png)
 
     For more information, refer to the [Code Optimizations Documentation](https://aka.ms/CodeOptimizations/Docs).
 
@@ -140,10 +142,10 @@ Welcome to the home page of `Microsoft Application Insights Profiler for ASP.NET
 
 ## Next Steps
 
-* [Profiler Configurations](./Configurations.md) -  Customize profiler settings.
+* [Profiler Configurations](./Configurations.md) - Customize profiler settings.
 * [Dockerize with Profiler](./examples/QuickStart3_0/Readme2.md)
 * [Profiler Sessions](./ProfilerSessions.md) - Details on profiler operations.
-* [Trace Analysis](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-overview?toc=/azure/azure-monitor/toc.json#view-profiler-data) - Learn about trace analysis. For example, what does `AWAIT TIME`, `Blocked time`, `Unmanaged Async` means, etc.
+* [Trace Analysis](https://learn.microsoft.com/en-us/azure/application-insights/app-insights-profiler-overview?toc=/azure/azure-monitor/toc.json#view-profiler-data) - Learn about trace analysis. For example, what do `AWAIT TIME`, `Blocked time`, `Unmanaged Async` mean, etc.
 * [Diagnosing High CPU Usage](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/TriggerProfiler.md).
 * [Call tree filter](https://github.com/Azure/azure-diagnostics-tools/blob/master/Profiler/CallTreeFilter.md).
 
@@ -163,7 +165,7 @@ Refer to the [Support Matrix](./SupportMatrix.md) to determine the appropriate p
 
 ## References
 
-* [Profile ASP.NET Core Azure Linux web apps with Application Insights Profiler](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-profiler-aspnetcore-linux)
+* [Profile ASP.NET Core Azure Linux web apps with Application Insights Profiler](https://learn.microsoft.com/en-us/azure/application-insights/app-insights-profiler-aspnetcore-linux)
 
 ## CAUTION
 
